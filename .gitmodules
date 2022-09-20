@@ -1,0 +1,6 @@
+[submodule "lib/glfw"]
+	path = lib/glfw
+	url = https://github.com/syndelis/glfw
+[submodule "lib/stb"]
+	path = lib/stb
+	url = https://github.com/syndelis/stb

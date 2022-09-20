@@ -1,0 +1,10 @@
+# Binaries
+/obj/
+*.o
+*.a
+
+# VS Code files
+/.vscode/
+!/.vscode/launch.json
+!/.vscode/tasks.json
+!/.vscode/c_cpp_properties.json
