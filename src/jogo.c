@@ -27,7 +27,7 @@ void abre_janela(int largura, int altura) {
 
     if (fullscreen) {
         monitor = glfwGetPrimaryMonitor();
-        GLFWvidmode *mode = glfwGetVideoMode(monitor);
+        const GLFWvidmode *mode = glfwGetVideoMode(monitor);
 
         window_width = mode->width;
         window_height = mode->height;

@@ -11,15 +11,16 @@ LINK_DIRS=
 LINKS=-lGL -lm -ldl -pthread
 DEFINE=
 
-OUT=jogo.o
-LIB=libjogo.a
 SRC_DIR=src
 SRC=$(wildcard $(SRC_DIR)/*.c) $(wildcard $(SRC_DIR)/**/*.c)
 OBJ_DIR=obj
 OBJ=$(foreach src,$(SRC),$(OBJ_DIR)/$(notdir $(basename $(src))).o)
 
+LIB=libjogo.a
+
 VPATH=$(wildcard $(SRC_DIR)/*) $(dir GLFW_LIB)
-all: $(GLFW_LIB) $(LIB)
+
+all: $(GLFW_LIB) $(OBJ_DIR) $(LIB)
 
 $(GLFW_LIB):
 	mkdir -p $(GLFW_BUILD_DIR)
@@ -29,17 +30,14 @@ $(GLFW_LIB):
 $(OBJ_DIR):
 	mkdir -p $@
 
-$(LIB): $(OUT)
+$(LIB): $(OBJ)
 	ar rcs $@ $^
 
-$(OUT): $(OBJ_DIR) $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) $(GLFW_LIB) -o $@ $(INCLUDE_DIRS) $(LINK_DIRS) $(LINKS) $(DEFINE)
-
 $(OBJ): $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	$(CC) $(CFLAGS) $(CFLAGS_LIB) $< -o $@ $(INCLUDE_DIRS) $(LINK_DIRS) $(LINKS) $(DEFINE)
+	$(CC) $(CFLAGS) $(CFLAGS_LIB) $< -o $@ $(INCLUDE_DIRS) $(DEFINE)
 
 full-clean: clean
 	rm -rf $(GLFW_BUILD_DIR)
 
 clean:
-	rm -rf $(OBJ_DIR) $(OUT) $(LIB)
+	rm -rf $(OBJ_DIR) $(LIB)
