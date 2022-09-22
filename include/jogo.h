@@ -8,6 +8,7 @@
 #include <stdbool.h>
 #include <GLFW/glfw3.h>
 #include <GL/gl.h>
+#include "display.h"
 #include "../src/macros.h"
 
 extern GLFWwindow *window;
@@ -18,7 +19,7 @@ extern GLFWwindow *window;
 
 void abre_janela();
 void fecha_janela();
-bool janela_aberta();
+bool janela_esta_aberta();
 void tela_cheia();
 
 #endif

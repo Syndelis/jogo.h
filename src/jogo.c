@@ -48,8 +48,6 @@ void abre_janela(int largura, int altura) {
         "Jogo em C", monitor, NULL
     );
 
-    printf("Window is %p\n", window);
-    
     glfwMakeContextCurrent(window);
     glfwSwapInterval(1);
 
@@ -76,7 +74,7 @@ void fecha_janela() {
 
 // ---------------------------------------------------------
 
-bool janela_aberta() {
+bool janela_esta_aberta() {
 
     glfwPollEvents();
     bool is_open = !glfwWindowShouldClose(window);
@@ -86,6 +84,7 @@ bool janela_aberta() {
         glfwSwapBuffers(window);
 
         glClear(GL_COLOR_BUFFER_BIT);
+        glColor4f(1, 1, 1, 1);
     }
 
     return is_open;
