@@ -10,6 +10,7 @@
 #include <GL/gl.h>
 #include "display.h"
 #include "image.h"
+#include "input.h"
 #include "../src/macros.h"
 
 extern GLFWwindow *window;
@@ -22,5 +23,6 @@ void abre_janela();
 void fecha_janela();
 bool janela_esta_aberta();
 void tela_cheia();
+void janela_deve_fechar();
 
 #endif

@@ -10,6 +10,7 @@
 #include <GL/gl.h>
 #include "../include/jogo.h"
 #include "../include/image.h"
+#include "../include/input.h"
 
 GLFWwindow *window = NULL;
 int window_width = 0, window_height = 0;
@@ -56,6 +57,9 @@ void abre_janela(int largura, int altura) {
 
     glfwMakeContextCurrent(window);
     glfwSwapInterval(1);
+
+    glfwSetCursorPosCallback(window, _mouse_position_callback);
+    glfwSetKeyCallback(window, _keyboard_key_callback);
 
     // GL Setup ------------------------
 
@@ -146,4 +150,10 @@ bool janela_esta_aberta() {
 
     return is_open;
 
+}
+
+// ---------------------------------------------------------
+
+void janela_deve_fechar() {
+    glfwSetWindowShouldClose(window, true);
 }
