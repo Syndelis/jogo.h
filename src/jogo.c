@@ -130,6 +130,7 @@ void fecha_janela() {
     glfwTerminate();
 
     _free_sprite_hashmap();
+    _free_font_hashmap();
 
 }
 
