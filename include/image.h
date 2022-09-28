@@ -1,26 +1,22 @@
-#ifndef JOGO_H
-#define JOGO_H
+#ifndef IMAGE_H
+#define IMAGE_H
 
 /* -----------------------------------------------------------------------------
-    INCLUDES & GLOBALS
+    INCLUDES
 ----------------------------------------------------------------------------- */
 
-#include <stdbool.h>
-#include <GLFW/glfw3.h>
-#include <GL/gl.h>
 #include "display.h"
-#include "image.h"
-#include "../src/macros.h"
-
-extern GLFWwindow *window;
 
 /* -----------------------------------------------------------------------------
-    FUNCTIONS
+    PUBLIC FUNCTIONS
 ----------------------------------------------------------------------------- */
 
-void abre_janela();
-void fecha_janela();
-bool janela_esta_aberta();
-void tela_cheia();
+DISPLAY_FUNC(desenha_imagem, char *arquivo);
+
+/* -----------------------------------------------------------------------------
+    PRIVATE FUNCTIONS
+----------------------------------------------------------------------------- */
+
+void _free_sprite_hashmap();
 
 #endif

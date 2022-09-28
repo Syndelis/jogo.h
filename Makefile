@@ -6,9 +6,9 @@ GLFW_SRC=lib/glfw
 GLFW_BUILD_DIR=$(GLFW_SRC)/build
 GLFW_LIB=$(GLFW_BUILD_DIR)/src/libglfw3.a
 
-INCLUDE_DIRS=-I. -I$(GLFW_SRC)/include
+INCLUDE_DIRS=-I. -I$(GLFW_SRC)/include -Ilib/
 LINK_DIRS=
-LINKS=-lGL -lm -ldl -pthread
+LINKS=-lGL -lGLEW -lm -ldl -pthread
 DEFINE=
 
 SRC_DIR=src

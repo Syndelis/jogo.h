@@ -5,11 +5,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
+#include <GL/gl.h>
 #include "../include/jogo.h"
+#include "../include/image.h"
 
 GLFWwindow *window = NULL;
 int window_width = 0, window_height = 0;
 bool fullscreen = false;
+
+#define BASE_GLEW_ERROR "\033[32;41mERRO!\033[m Não foi possível inicializar o GLEW:\n"
 
 /* -----------------------------------------------------------------------------
     PUBLIC FUNCTIONS
@@ -21,7 +27,7 @@ void tela_cheia() {
 
 void abre_janela(int largura, int altura) {
 
-    // A NULL monitor will created a "windowed window", while an actual monitor
+    // A NULL monitor will create a "windowed window", while an actual monitor
     // pointer will create a fullscreen window
     GLFWmonitor *monitor = NULL;
 
@@ -54,12 +60,61 @@ void abre_janela(int largura, int altura) {
     // GL Setup ------------------------
 
     glClearColor(.0f, .0f, .0f, 1.f);
+    glEnable(GL_TEXTURE_2D);
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glEnable(GL_MULTISAMPLE);
 
     glViewport(0, 0, window_width, window_height);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     glOrtho(0, window_width, window_height, 0, 1, -1);
+
+    // GLEW Setup ----------------------
+
+    GLenum err = glewInit();
+    switch (err) {
+
+        case GLEW_OK:
+            break;
+
+        case GLEW_ERROR_NO_GL_VERSION:
+            fprintf(
+                stderr,
+                BASE_GLEW_ERROR
+                "\tNão foi possível detectar a versão do OpenGL.\n"
+            );
+            exit(EXIT_FAILURE);
+            break;
+
+        case GLEW_ERROR_GL_VERSION_10_ONLY:
+            fprintf(
+                stderr,
+                BASE_GLEW_ERROR
+                "\tA versão do OpenGL não atende o requisito mínimo >= 1.1.\n"
+            );
+            exit(EXIT_FAILURE);
+            break;
+
+        case GLEW_ERROR_GLX_VERSION_11_ONLY:
+            fprintf(
+                stderr,
+                BASE_GLEW_ERROR
+                "\tA versão do OpenGL não atende o requisito mínimo >= 1.2.\n"
+            );
+            exit(EXIT_FAILURE);
+            break;
+
+        case GLEW_ERROR_NO_GLX_DISPLAY:
+            fprintf(
+                stderr,
+                BASE_GLEW_ERROR
+                "\tNão foi possível detectar o display.\n"
+            );
+            exit(EXIT_FAILURE);
+            break;
+
+    }
 
 }
 
@@ -69,6 +124,8 @@ void fecha_janela() {
 
     glfwDestroyWindow(window);
     glfwTerminate();
+
+    _free_sprite_hashmap();
 
 }
 
