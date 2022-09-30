@@ -2,7 +2,10 @@
     INCLUDES & GLOBALS
 ----------------------------------------------------------------------------- */
 
+#include <stdbool.h>
+#include <string.h>
 #include <GL/glew.h>
+#include <GLFW/glfw3.h>
 #include <GL/gl.h>
 
 #define STB_IMAGE_IMPLEMENTATION
@@ -23,11 +26,8 @@
 #define ASCII_CHR_START 32
 #define ASCII_CHR_END   252
 #define ASCII_CHR_COUNT (ASCII_CHR_END - ASCII_CHR_START + 1)
-
-// Forward declarations --------------------------------------------------------
-GLuint _insert_sprite(char *in_filename, int *out_width, int *out_height);
-GLuint _load_image(char *in_filename, int *out_width, int *out_height);
-ptrdiff_t _insert_font(char *filename, float point_size, char *font_hash_name);
+#define GIF_LAYERS 4
+#define SECONDS_TO_MSECONDS 1000
 
 /* -----------------------------------------------------------------------------
     PRIVATE STRUCTURES
@@ -35,7 +35,23 @@ ptrdiff_t _insert_font(char *filename, float point_size, char *font_hash_name);
 
 typedef struct {
     GLuint texture_id;
+} StaticSprite;
+
+typedef struct {
+    GLuint *texture_ids;
+    int *frame_delays;
+    int frame_count;
+    int current_frame;
+    double last_frame_seconds;
+} AnimatedSprite;
+
+typedef struct {
+    enum { Static, Animated } type;
     int width, height;
+    union {
+        StaticSprite static_spr;
+        AnimatedSprite animated_spr;
+    };
 } Sprite;
 
 typedef struct {
@@ -63,6 +79,25 @@ ptrdiff_t active_font_index = -1;
 #define FONT_HASH_FORMAT "%s_%f"
 
 /* -----------------------------------------------------------------------------
+    FORWARD DECLARATIONS
+----------------------------------------------------------------------------- */
+
+ptrdiff_t _insert_font(char *filename, float point_size, char *font_hash_name);
+
+GLuint _insert_sprite(char *in_filename, int *out_width, int *out_height);
+GLuint _load_image(char *in_filename, int *out_width, int *out_height);
+GLuint *_load_gif(char *in_filename, int *out_width, int *out_height, int *out_frame_count, int **out_delays);
+
+inline void _draw_static_sprite(Sprite *sprite, int x, int y);
+void _draw_animated_sprite(Sprite *sprite, int x, int y);
+void _draw_texture(GLuint texture_id, int x, int y, int width, int height);
+
+unsigned char *_read_gif_into_data(
+    char *in_filename, int *out_width, int *out_height,
+    int *out_frame_count, int **out_frame_delays
+);
+
+/* -----------------------------------------------------------------------------
     PUBLIC FUNCTIONS
 ----------------------------------------------------------------------------- */
 
@@ -72,34 +107,23 @@ DISPLAY_FUNC(desenha_imagem, char *arquivo) {
     int width, height;
 
     // Try to obtain the image from the hashmap "cache"
-    FileToSprite *sprite = shgetp_null(sprite_hashmap, arquivo);
-    if (sprite) {
-        texture_id = sprite->value.texture_id;
-        width = sprite->value.width;
-        height = sprite->value.height;
+    FileToSprite *fts = shgetp_null(sprite_hashmap, arquivo);
+    if (fts) {
+        switch (fts->value.type) {
+            case Static:
+                _draw_static_sprite(&fts->value, x, y);
+                break;
+
+            case Animated:
+                _draw_animated_sprite(&fts->value, x, y);
+                break;
+        }
     }
 
-    else // If it can't be found, load it in and use it
+    else { // If it can't be found, load it in and use it
         texture_id = _insert_sprite(arquivo, &width, &height);
-
-    glColor4f(1., 1., 1., 1.);
-    glBindTexture(GL_TEXTURE_2D, texture_id);
-
-    float w = width  / 2.;
-    float h = height / 2.;
-
-    glBegin(GL_QUADS);
-        glTexCoord2f(    1,     1);
-        glVertex2f  (x + w, y + h);
-        glTexCoord2f(    1,     0);
-        glVertex2f  (x + w, y - h);
-        glTexCoord2f(    0,     0);
-        glVertex2f  (x - w, y - h);
-        glTexCoord2f(    0,     1);
-        glVertex2f  (x - w, y + h);
-    glEnd();
-
-    glBindTexture(GL_TEXTURE_2D, 0);
+        _draw_texture(texture_id, x, y, width, height);
+    }
 
 }
 
@@ -111,7 +135,7 @@ char font_hash_buffer[256];
 unsigned char ttf_buffer[_FONT_BUFFER_SIZE];
 unsigned char temp_bitmap[_BITMAP_BUFFER_DIMENSION*_BITMAP_BUFFER_DIMENSION];
 
-// // -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 void fonte(char *arquivo, float tamanho) {
 
@@ -123,7 +147,7 @@ void fonte(char *arquivo, float tamanho) {
 
 }
 
-// // -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 DISPLAY_FUNC(desenha_texto, char *texto) {
 
@@ -180,18 +204,148 @@ void _free_sprite_hashmap() {
 
 // -----------------------------------------------------------------------------
 
+void _draw_texture(GLuint texture_id, int x, int y, int width, int height) {
+
+    glColor4f(1., 1., 1., 1.);
+    glBindTexture(GL_TEXTURE_2D, texture_id);
+
+    float w = width  / 2.;
+    float h = height / 2.;
+
+    glBegin(GL_QUADS);
+        glTexCoord2f(    1,     1);
+        glVertex2f  (x + w, y + h);
+        glTexCoord2f(    1,     0);
+        glVertex2f  (x + w, y - h);
+        glTexCoord2f(    0,     0);
+        glVertex2f  (x - w, y - h);
+        glTexCoord2f(    0,     1);
+        glVertex2f  (x - w, y + h);
+    glEnd();
+
+    glBindTexture(GL_TEXTURE_2D, 0);
+
+}
+
+// -----------------------------------------------------------------------------
+
+void _draw_static_sprite(Sprite *sprite, int x, int y) {
+    _draw_texture(sprite->static_spr.texture_id, x, y, sprite->width, sprite->height);
+}
+
+// -----------------------------------------------------------------------------
+
+void _draw_animated_sprite(Sprite *sprite, int x, int y) {
+
+    GLuint *texture_ids = sprite->animated_spr.texture_ids;
+    double current_time_seconds = glfwGetTime();
+
+    AnimatedSprite *aspr = &sprite->animated_spr;
+
+    if (
+        (current_time_seconds - aspr->last_frame_seconds) * SECONDS_TO_MSECONDS
+        >= aspr->frame_delays[aspr->current_frame]
+    ) {
+        aspr->last_frame_seconds = current_time_seconds;
+        aspr->current_frame = (aspr->current_frame + 1) % aspr->frame_count;
+    }
+
+    GLuint current_texture_id = texture_ids[aspr->current_frame];
+
+    _draw_texture(current_texture_id, x, y, sprite->width, sprite->height);
+
+}
+
+// -----------------------------------------------------------------------------
+
 GLuint _insert_sprite(char *in_filename, int *out_width, int *out_height) {
 
-    GLuint sprite_texture = _load_image(in_filename, out_width, out_height);
+    bool is_animated = false;
+    char *file_extension = strrchr(in_filename, '.');
 
-    Sprite sprite = {
-        .texture_id = sprite_texture,
-        .width = *out_width,
-        .height = *out_height
-    };
+    if (file_extension && *file_extension) {
+        if (strcmp(file_extension, ".gif") == 0)
+            is_animated = true;
+    }
 
-    shput(sprite_hashmap, in_filename, sprite);
-    return sprite_texture;
+    if (is_animated) {
+        int frame_count;
+        int *frame_delays;
+
+        GLuint *sprite_textures = _load_gif(
+            in_filename, out_width, out_height, &frame_count, &frame_delays
+        );
+
+        if (sprite_textures) {
+
+            Sprite sprite = {
+                .type = Animated,
+                .width = *out_width,
+                .height = *out_height,
+                .animated_spr = (AnimatedSprite) {
+                    .texture_ids = sprite_textures,
+                    .frame_delays = frame_delays,
+                    .frame_count = frame_count,
+                    .current_frame = 0,
+                    .last_frame_seconds = glfwGetTime(),
+                }
+            };
+
+            shput(sprite_hashmap, in_filename, sprite);
+
+            // We return the first frame because since this function is only called
+            // the first time a sprite is drawn, we want to draw the first frame
+            return sprite_textures[0];
+
+        }
+
+        // File turned out to be a static image after all
+        else is_animated = false;
+    }
+
+    if (!is_animated) {
+        GLuint sprite_texture = _load_image(in_filename, out_width, out_height);
+
+        Sprite sprite = {
+            .type = Static,
+            .width = *out_width,
+            .height = *out_height,
+            .static_spr = (StaticSprite) {
+                .texture_id = sprite_texture,
+            }
+        };
+
+        shput(sprite_hashmap, in_filename, sprite);
+        return sprite_texture;
+    }
+
+}
+
+// -----------------------------------------------------------------------------
+
+GLuint _load_texture(unsigned char *image_data, int image_width, int image_height) {
+
+    GLuint image_texture;
+    glGenTextures(1, &image_texture);
+    glBindTexture(GL_TEXTURE_2D, image_texture);
+    glGenerateMipmap(GL_TEXTURE_2D);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_GENERATE_MIPMAP, GL_TRUE);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST_MIPMAP_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+
+#if defined(GL_UNPACK_ROW_LENGTH) && !defined(__EMSCRIPTEN__)
+    glPixelStorei(GL_UNPACK_ROW_LENGTH, 0);
+#endif
+
+    glTexImage2D(
+        GL_TEXTURE_2D, 0, GL_RGBA, image_width, image_height,
+        0, GL_RGBA, GL_UNSIGNED_BYTE, image_data
+    );
+
+    return image_texture;
 
 }
 
@@ -208,24 +362,7 @@ GLuint _load_image(char *in_filename, int *out_width, int *out_height) {
     if (image_data == NULL)
         return -1;
 
-    GLuint image_texture;
-    glGenTextures(1, &image_texture);
-    glBindTexture(GL_TEXTURE_2D, image_texture);
-    glGenerateMipmap(GL_TEXTURE_2D);
-
-    glTexParameteri(GL_TEXTURE_2D, GL_GENERATE_MIPMAP, GL_TRUE);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST_MIPMAP_NEAREST);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-
-#if defined(GL_UNPACK_ROW_LENGTH) && !defined(__EMSCRIPTEN__)
-    glPixelStorei(GL_UNPACK_ROW_LENGTH, 0);
-#endif
-    glTexImage2D(
-        GL_TEXTURE_2D, 0, GL_RGBA, image_width, image_height,
-        0, GL_RGBA, GL_UNSIGNED_BYTE, image_data
-    );
+    GLuint image_texture = _load_texture(image_data, image_width, image_height);
 
     stbi_image_free(image_data);
 
@@ -233,6 +370,29 @@ GLuint _load_image(char *in_filename, int *out_width, int *out_height) {
     *out_height = image_height;
 
     return image_texture;
+
+}
+
+// -----------------------------------------------------------------------------
+
+GLuint *_load_gif(char *in_filename, int *out_width, int *out_height, int *out_frame_count, int **out_delays) {
+
+    unsigned char *animated_data = _read_gif_into_data(
+        in_filename, out_width, out_height, out_frame_count, out_delays
+    );
+
+    if (animated_data == NULL)
+        return NULL;
+
+    GLuint *animated_textures = malloc(*out_frame_count * sizeof(GLuint));
+    int stride = *out_width * *out_height * GIF_LAYERS;
+
+    for (int i = 0; i < *out_frame_count; i++)
+        animated_textures[i] = _load_texture(
+            animated_data + i * stride, *out_width, *out_height
+        );
+
+    return animated_textures;
 
 }
 
@@ -271,5 +431,41 @@ ptrdiff_t _insert_font(char *filename, float point_size, char *font_hash_name) {
 
     shput(font_hashmap, font_hash_name, font_data);
     return shgeti(font_hashmap, font_hash_name);
+
+}
+
+// -----------------------------------------------------------------------------
+
+unsigned char *_read_gif_into_data(
+    char *in_filename, int *out_width, int *out_height,
+    int *out_frame_count, int **out_frame_delays
+) {
+
+    stbi__context s;
+    FILE *gif_file;
+
+    if (!(gif_file = stbi__fopen(in_filename, "rb"))) {
+        fprintf(
+            stderr,
+            "\033[32mERRO\033[0m Não foi possível abrir o arquivo \"%s\".\n",
+            in_filename
+        );
+        exit(EXIT_FAILURE);
+    }
+
+    stbi__start_file(&s, gif_file);
+    
+    if (!stbi__gif_test(&s)) {
+        fclose(gif_file);
+        return NULL;
+    }
+
+    unsigned char *gif_data = stbi__load_gif_main(
+        &s, out_frame_delays, out_width, out_height,
+        out_frame_count, NULL, GIF_LAYERS
+    );
+
+    fclose(gif_file);
+    return gif_data;
 
 }
