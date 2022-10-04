@@ -61,6 +61,7 @@ void abre_janela(int largura, int altura) {
 
     glfwSetCursorPosCallback(window, _mouse_position_callback);
     glfwSetKeyCallback(window, _keyboard_key_callback);
+    glfwSetMouseButtonCallback(window, _mouse_button_callback);
 
     // GL Setup ------------------------
 
@@ -145,6 +146,7 @@ void fecha_janela() {
 
 bool janela_esta_aberta() {
 
+    _update_input_system();
     glfwPollEvents();
     bool is_open = !glfwWindowShouldClose(window);
 
