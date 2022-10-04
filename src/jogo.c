@@ -11,6 +11,7 @@
 #include "../include/jogo.h"
 #include "../include/image.h"
 #include "../include/input.h"
+#include "../include/audio.h"
 
 GLFWwindow *window = NULL;
 int window_width = 0, window_height = 0;
@@ -120,6 +121,10 @@ void abre_janela(int largura, int altura) {
 
     }
 
+    // Sound Setup ---------------------
+
+    _initialize_sound_system();
+
 }
 
 // ---------------------------------------------------------
@@ -131,6 +136,8 @@ void fecha_janela() {
 
     _free_sprite_hashmap();
     _free_font_hashmap();
+
+    _terminate_sound_system();
 
 }
 

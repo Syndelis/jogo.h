@@ -11,6 +11,7 @@
 #include "display.h"
 #include "image.h"
 #include "input.h"
+#include "audio.h"
 #include "../src/macros.h"
 
 extern GLFWwindow *window;

@@ -6,7 +6,9 @@ GLFW_SRC=lib/glfw
 GLFW_BUILD_DIR=$(GLFW_SRC)/build
 GLFW_LIB=$(GLFW_BUILD_DIR)/src/libglfw3.a
 
-INCLUDE_DIRS=-I. -I$(GLFW_SRC)/include -Ilib/
+MINIAUDIO_SRC=lib/miniaudio
+
+INCLUDE_DIRS=-I. -I$(GLFW_SRC)/include -Ilib/ -I$(MINIAUDIO_SRC)
 LINK_DIRS=
 LINKS=-lGL -lGLEW -lm -ldl -pthread
 DEFINE=

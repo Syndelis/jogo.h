@@ -22,6 +22,7 @@
 
 #include "../include/display.h"
 #include "../include/image.h"
+#include "../include/exceptions.h"
 
 #define ASCII_CHR_START 32
 #define ASCII_CHR_END   252
@@ -154,7 +155,7 @@ DISPLAY_FUNC(desenha_texto, char *texto) {
     if (active_font_index < 0) {
         fprintf(
             stderr,
-            "\033[32;41mERRO!\033[m Nenhuma fonte foi definida com a função "
+            ERROR "Nenhuma fonte foi definida com a função "
             "`\033[32mfonte()\033[m` antes da chamada "
             "`\033[32mdesenha_texto()\033[m`\n"
         );
@@ -447,7 +448,7 @@ unsigned char *_read_gif_into_data(
     if (!(gif_file = stbi__fopen(in_filename, "rb"))) {
         fprintf(
             stderr,
-            "\033[32mERRO\033[0m Não foi possível abrir o arquivo \"%s\".\n",
+            ERROR "Não foi possível abrir o arquivo \"%s\".\n",
             in_filename
         );
         exit(EXIT_FAILURE);
