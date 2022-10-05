@@ -12,12 +12,19 @@
 #include "../include/image.h"
 #include "../include/input.h"
 #include "../include/audio.h"
+#include "../include/exceptions.h"
 
 GLFWwindow *window = NULL;
 int window_width = 0, window_height = 0;
 bool fullscreen = false;
 
-#define BASE_GLEW_ERROR "\033[32;41mERRO!\033[m Não foi possível inicializar o GLEW:\n"
+#define BASE_GLEW_ERROR ERROR " Não foi possível inicializar o GLEW:\n"
+
+/* -----------------------------------------------------------------------------
+    FORWARD DECLARATIONS
+----------------------------------------------------------------------------- */
+
+void _window_framebuffer_size_callback(GLFWwindow* window, int width, int height);
 
 /* -----------------------------------------------------------------------------
     PUBLIC FUNCTIONS
@@ -62,6 +69,7 @@ void abre_janela(int largura, int altura) {
     glfwSetCursorPosCallback(window, _mouse_position_callback);
     glfwSetKeyCallback(window, _keyboard_key_callback);
     glfwSetMouseButtonCallback(window, _mouse_button_callback);
+    glfwSetFramebufferSizeCallback(window, _window_framebuffer_size_callback);
 
     // GL Setup ------------------------
 
@@ -71,10 +79,7 @@ void abre_janela(int largura, int altura) {
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glEnable(GL_MULTISAMPLE);
 
-    glViewport(0, 0, window_width, window_height);
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    glOrtho(0, window_width, window_height, 0, 1, -1);
+    _window_framebuffer_size_callback(window, window_width, window_height);
 
     // GLEW Setup ----------------------
 
@@ -166,4 +171,20 @@ bool janela_esta_aberta() {
 
 void janela_deve_fechar() {
     glfwSetWindowShouldClose(window, true);
+}
+
+/* -----------------------------------------------------------------------------
+    PRIVATE FUNCTIONS
+----------------------------------------------------------------------------- */
+
+void _window_framebuffer_size_callback(GLFWwindow *window, int width, int height) {
+
+    glViewport(0, 0, width, height);
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    glOrtho(0, width, height, 0, 1, -1);
+
+    window_width = width;
+    window_height = height;
+
 }
