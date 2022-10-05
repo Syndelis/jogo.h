@@ -19,7 +19,9 @@ OBJ_DIR=obj
 OBJ=$(foreach src,$(SRC),$(OBJ_DIR)/$(notdir $(basename $(src))).o)
 
 LIB=libjogo.a
+LIB_PART=libjogo-part.a
 
+.PHONY: includes links
 VPATH=$(wildcard $(SRC_DIR)/*) $(dir GLFW_LIB)
 
 all: $(GLFW_LIB) $(OBJ_DIR) $(LIB)
@@ -32,8 +34,11 @@ $(GLFW_LIB):
 $(OBJ_DIR):
 	mkdir -p $@
 
-$(LIB): $(OBJ)
+$(LIB_PART): $(OBJ)
 	ar rcs $@ $^
+
+$(LIB): $(LIB_PART) $(GLFW_LIB)
+	ar -rcT $@ $^
 
 $(OBJ): $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) $(CFLAGS_LIB) $< -o $@ $(INCLUDE_DIRS) $(DEFINE)
@@ -43,3 +48,12 @@ full-clean: clean
 
 clean:
 	rm -rf $(OBJ_DIR) $(LIB)
+
+includes:
+	$(eval LOCAL_INCLUDE_DIRS := . $(GLFW_SRC))
+	$(eval JOGO_ABSOLUTE_PATH := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))")
+	$(eval INCLUDES := $(foreach dir,$(LOCAL_INCLUDE_DIRS),-I$(JOGO_ABSOLUTE_PATH)/$(dir)/include))
+	@echo "$(INCLUDES)"
+
+links:
+	@echo "$(LINKS)"
