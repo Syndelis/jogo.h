@@ -1,0 +1,268 @@
+<!-- HTML header for doxygen 1.9.3-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>jogo.h: Referência ao ficheiro include/jogo.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeDarkModeToggle.init()
+</script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+        <script type="text/javascript">
+            DoxygenAwesomeFragmentCopyButton.init()
+        </script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeParagraphLink.init()
+</script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeInteractiveToc.init()
+</script>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">jogo.h<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">A simples biblioteca de jogos para C</div>
+  </td>
+ </tr>
+   <!--BEGIN FULL_SIDEBAR-->
+   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Localizar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td></tr>
+   <!--END FULL_SIDEBAR-->
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('jogo_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência ao ficheiro jogo.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;GLFW/glfw3.h&gt;</code><br />
+<code>#include &lt;GL/gl.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="display_8h_source.html">display.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="image_8h_source.html">image.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="input_8h_source.html">input.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="audio_8h_source.html">audio.h</a>&quot;</code><br />
+<code>#include &quot;common.h&quot;</code><br />
+</div>
+<p><a href="jogo_8h_source.html">Ir para o código fonte deste ficheiro.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a67bbf028b257929020ec9504a17a9867"><td class="memItemLeft" align="right" valign="top"><a id="a67bbf028b257929020ec9504a17a9867"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jogo_8h.html#a67bbf028b257929020ec9504a17a9867">TELA_CHEIA</a>&#160;&#160;&#160;0x0FFFFFFF</td></tr>
+<tr class="memdesc:a67bbf028b257929020ec9504a17a9867"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pode ser passado para a função <a class="el" href="jogo_8h.html#ac602aadd42fc32970c8f48f8104e7472">abre_janela()</a> para abrir o jogo em tela cheia. <br /></td></tr>
+<tr class="separator:a67bbf028b257929020ec9504a17a9867"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac602aadd42fc32970c8f48f8104e7472"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jogo_8h.html#ac602aadd42fc32970c8f48f8104e7472">abre_janela</a>(...)&#160;&#160;&#160;_abre_janela(NARGS(__VA_ARGS__), __VA_ARGS__)</td></tr>
+<tr class="memdesc:ac602aadd42fc32970c8f48f8104e7472"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abre a janela do jogo.  <a href="jogo_8h.html#ac602aadd42fc32970c8f48f8104e7472">Mais...</a><br /></td></tr>
+<tr class="separator:ac602aadd42fc32970c8f48f8104e7472"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a10716776b8cc9ed7714e40c338656fd0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jogo_8h.html#a10716776b8cc9ed7714e40c338656fd0">fecha_janela</a> ()</td></tr>
+<tr class="memdesc:a10716776b8cc9ed7714e40c338656fd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fecha a janela e termina o jogo.  <a href="jogo_8h.html#a10716776b8cc9ed7714e40c338656fd0">Mais...</a><br /></td></tr>
+<tr class="separator:a10716776b8cc9ed7714e40c338656fd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6a89839c8fb337b8cc794a0442c795c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jogo_8h.html#ad6a89839c8fb337b8cc794a0442c795c">janela_esta_aberta</a> ()</td></tr>
+<tr class="memdesc:ad6a89839c8fb337b8cc794a0442c795c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se a janela do jogo está aberta.  <a href="jogo_8h.html#ad6a89839c8fb337b8cc794a0442c795c">Mais...</a><br /></td></tr>
+<tr class="separator:ad6a89839c8fb337b8cc794a0442c795c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b6ad8577fea2fbf42b527f4622325e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jogo_8h.html#a9b6ad8577fea2fbf42b527f4622325e7">janela_deve_fechar</a> ()</td></tr>
+<tr class="memdesc:a9b6ad8577fea2fbf42b527f4622325e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marca a janela para fechar. Isso significa que <a class="el" href="jogo_8h.html#ad6a89839c8fb337b8cc794a0442c795c">janela_esta_aberta()</a> retornará <code>false</code> na próxima vez que for chamada.  <a href="jogo_8h.html#a9b6ad8577fea2fbf42b527f4622325e7">Mais...</a><br /></td></tr>
+<tr class="separator:a9b6ad8577fea2fbf42b527f4622325e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentação das macros</h2>
+<a id="ac602aadd42fc32970c8f48f8104e7472"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac602aadd42fc32970c8f48f8104e7472">&#9670;&nbsp;</a></span>abre_janela</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define abre_janela</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em></td><td>)</td>
+          <td>&#160;&#160;&#160;_abre_janela(NARGS(__VA_ARGS__), __VA_ARGS__)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Abre a janela do jogo. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">largura</td><td>Largura da janela. Opcionalmente pode ser <a class="el" href="jogo_8h.html#a67bbf028b257929020ec9504a17a9867">TELA_CHEIA</a>. </td></tr>
+    <tr><td class="paramname">altura</td><td>Altura da janela. Só deve aparecer quando <code>largura</code> não for <a class="el" href="jogo_8h.html#a67bbf028b257929020ec9504a17a9867">TELA_CHEIA</a>. <b>Opcional</b> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd><code>void</code> </dd></dl>
+<dl class="section examples"><dt>Exemplos</dt><dd><a class="el" href="cor-example.html#a0">cor</a>, <a class="el" href="desenha_imagem-example.html#a0">desenha_imagem</a> e <a class="el" href="desenha_texto-example.html#a0">desenha_texto</a>.</dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação das funções</h2>
+<a id="a10716776b8cc9ed7714e40c338656fd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10716776b8cc9ed7714e40c338656fd0">&#9670;&nbsp;</a></span>fecha_janela()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fecha_janela </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fecha a janela e termina o jogo. </p>
+<dl class="section return"><dt>Retorna</dt><dd><code>void</code> </dd></dl>
+<dl class="section examples"><dt>Exemplos</dt><dd><a class="el" href="cor-example.html#a4">cor</a>, <a class="el" href="desenha_imagem-example.html#a4">desenha_imagem</a> e <a class="el" href="desenha_texto-example.html#a5">desenha_texto</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="a9b6ad8577fea2fbf42b527f4622325e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b6ad8577fea2fbf42b527f4622325e7">&#9670;&nbsp;</a></span>janela_deve_fechar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void janela_deve_fechar </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Marca a janela para fechar. Isso significa que <a class="el" href="jogo_8h.html#ad6a89839c8fb337b8cc794a0442c795c">janela_esta_aberta()</a> retornará <code>false</code> na próxima vez que for chamada. </p>
+<dl class="section return"><dt>Retorna</dt><dd><code>void</code> </dd></dl>
+
+</div>
+</div>
+<a id="ad6a89839c8fb337b8cc794a0442c795c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6a89839c8fb337b8cc794a0442c795c">&#9670;&nbsp;</a></span>janela_esta_aberta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool janela_esta_aberta </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica se a janela do jogo está aberta. </p>
+<dl class="section return"><dt>Retorna</dt><dd><code>true</code> se a janela estiver aberta, <code>false</code> caso contrário. Esse retorno pode ser controlado pela função <a class="el" href="jogo_8h.html#a10716776b8cc9ed7714e40c338656fd0">fecha_janela()</a>. </dd></dl>
+<dl class="section examples"><dt>Exemplos</dt><dd><a class="el" href="cor-example.html#a1">cor</a>, <a class="el" href="desenha_imagem-example.html#a2">desenha_imagem</a> e <a class="el" href="desenha_texto-example.html#a2">desenha_texto</a>.</dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="jogo_8h.html">jogo.h</a></li>
+    <li class="footer">Gerado por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

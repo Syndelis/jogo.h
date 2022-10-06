@@ -1,0 +1,151 @@
+<!-- HTML header for doxygen 1.9.3-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>jogo.h: desenha_imagem</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeDarkModeToggle.init()
+</script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+        <script type="text/javascript">
+            DoxygenAwesomeFragmentCopyButton.init()
+        </script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeParagraphLink.init()
+</script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeInteractiveToc.init()
+</script>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">jogo.h<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">A simples biblioteca de jogos para C</div>
+  </td>
+ </tr>
+   <!--BEGIN FULL_SIDEBAR-->
+   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Localizar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td></tr>
+   <!--END FULL_SIDEBAR-->
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('desenha_imagem-example.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">desenha_imagem</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="jogo_8h.html">jogo.h</a>&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main() {</div>
+<div class="line">    <a name="a0"></a><a class="code" href="jogo_8h.html#ac602aadd42fc32970c8f48f8104e7472">abre_janela</a>(<a name="a1"></a><a class="code" href="jogo_8h.html#a67bbf028b257929020ec9504a17a9867">TELA_CHEIA</a>);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">while</span> (<a name="a2"></a><a class="code" href="jogo_8h.html#ad6a89839c8fb337b8cc794a0442c795c">janela_esta_aberta</a>())</div>
+<div class="line">        <a name="a3"></a><a class="code" href="image_8h.html#a238b34044bd63db766ba09a2fefc2b74">desenha_imagem</a>(50, 50, <span class="stringliteral">&quot;assets/tux.png&quot;</span>); <span class="comment">// &lt;--- Desenha a imagem na posição (x, y) = (50, 50)</span></div>
+<div class="line"> </div>
+<div class="line">   <a name="a4"></a><a class="code" href="jogo_8h.html#a10716776b8cc9ed7714e40c338656fd0">fecha_janela</a>();</div>
+<div class="line">}</div>
+</div><!-- fragment --><div class="fragment"></div><!-- fragment --> </div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aimage_8h_html_a238b34044bd63db766ba09a2fefc2b74"><div class="ttname"><a href="image_8h.html#a238b34044bd63db766ba09a2fefc2b74">desenha_imagem</a></div><div class="ttdeci">void desenha_imagem(int x, int y, char *arquivo)</div><div class="ttdoc">Desenha uma imagem na tela.</div></div>
+<div class="ttc" id="ajogo_8h_html"><div class="ttname"><a href="jogo_8h.html">jogo.h</a></div></div>
+<div class="ttc" id="ajogo_8h_html_a67bbf028b257929020ec9504a17a9867"><div class="ttname"><a href="jogo_8h.html#a67bbf028b257929020ec9504a17a9867">TELA_CHEIA</a></div><div class="ttdeci">#define TELA_CHEIA</div><div class="ttdoc">Pode ser passado para a função abre_janela() para abrir o jogo em tela cheia.</div><div class="ttdef"><b>Definition:</b> jogo.h:22</div></div>
+<div class="ttc" id="ajogo_8h_html_a10716776b8cc9ed7714e40c338656fd0"><div class="ttname"><a href="jogo_8h.html#a10716776b8cc9ed7714e40c338656fd0">fecha_janela</a></div><div class="ttdeci">void fecha_janela()</div><div class="ttdoc">Fecha a janela e termina o jogo.</div></div>
+<div class="ttc" id="ajogo_8h_html_ad6a89839c8fb337b8cc794a0442c795c"><div class="ttname"><a href="jogo_8h.html#ad6a89839c8fb337b8cc794a0442c795c">janela_esta_aberta</a></div><div class="ttdeci">bool janela_esta_aberta()</div><div class="ttdoc">Verifica se a janela do jogo está aberta.</div></div>
+<div class="ttc" id="ajogo_8h_html_ac602aadd42fc32970c8f48f8104e7472"><div class="ttname"><a href="jogo_8h.html#ac602aadd42fc32970c8f48f8104e7472">abre_janela</a></div><div class="ttdeci">#define abre_janela(...)</div><div class="ttdoc">Abre a janela do jogo.</div><div class="ttdef"><b>Definition:</b> jogo.h:37</div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Gerado por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

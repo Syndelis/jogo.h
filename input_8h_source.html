@@ -1,0 +1,267 @@
+<!-- HTML header for doxygen 1.9.3-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>jogo.h: Código-Fonte de include/input.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeDarkModeToggle.init()
+</script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+        <script type="text/javascript">
+            DoxygenAwesomeFragmentCopyButton.init()
+        </script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeParagraphLink.init()
+</script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeInteractiveToc.init()
+</script>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">jogo.h<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">A simples biblioteca de jogos para C</div>
+  </td>
+ </tr>
+   <!--BEGIN FULL_SIDEBAR-->
+   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Localizar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td></tr>
+   <!--END FULL_SIDEBAR-->
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('input_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">input.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="input_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef INPUT_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#define INPUT_H</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/* -----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">    INCLUDES &amp; GLOBALS</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">----------------------------------------------------------------------------- */</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;GLFW/glfw3.h&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> mouse_x, mouse_y;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="input_8h.html#a79d014352949143f5f4f4e714517ee61">   20</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="input_8h.html#a79d014352949143f5f4f4e714517ee61">TeclasEspeciais</a> {</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="input_8h.html#a79d014352949143f5f4f4e714517ee61af5297152557c7da396243000ca240e89">   21</a></span>&#160;    <a class="code" href="input_8h.html#a79d014352949143f5f4f4e714517ee61af5297152557c7da396243000ca240e89">ESC</a>             = GLFW_KEY_ESCAPE,          </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a951ab68bb8f7daafb78951107080904e">   22</a></span>&#160;    <a class="code" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a951ab68bb8f7daafb78951107080904e">ENTER</a>           = GLFW_KEY_ENTER,           </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a62d20d07f88d621127765d2553b234e6">   23</a></span>&#160;    <a class="code" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a62d20d07f88d621127765d2553b234e6">ESPACO</a>          = GLFW_KEY_SPACE,           </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a920380215591395ea33ee5df8e293e19">   24</a></span>&#160;    <a class="code" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a920380215591395ea33ee5df8e293e19">TAB</a>             = GLFW_KEY_TAB,             </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="input_8h.html#a79d014352949143f5f4f4e714517ee61ad2534cebcf6f430484b7c931dd657ddc">   25</a></span>&#160;    <a class="code" href="input_8h.html#a79d014352949143f5f4f4e714517ee61ad2534cebcf6f430484b7c931dd657ddc">BACKSPACE</a>       = GLFW_KEY_BACKSPACE,       </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="input_8h.html#a79d014352949143f5f4f4e714517ee61aa15c451953b2d2a93403afe786930d0f">   26</a></span>&#160;    <a class="code" href="input_8h.html#a79d014352949143f5f4f4e714517ee61aa15c451953b2d2a93403afe786930d0f">INSERT</a>          = GLFW_KEY_INSERT,          </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a9d61e82a9a12752f10aece1b22183913">   27</a></span>&#160;    <a class="code" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a9d61e82a9a12752f10aece1b22183913">DELETE</a>          = GLFW_KEY_DELETE,          </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a610b34ff160b74eb5e3b89aa35ea1671">   28</a></span>&#160;    <a class="code" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a610b34ff160b74eb5e3b89aa35ea1671">DIREITA</a>         = GLFW_KEY_RIGHT,           </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a2357e90b5b6d93e8cfc3e9b58a687f91">   29</a></span>&#160;    <a class="code" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a2357e90b5b6d93e8cfc3e9b58a687f91">ESQUERDA</a>        = GLFW_KEY_LEFT,            </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a920c73b182b92e249842f2a2f1873cdf">   30</a></span>&#160;    <a class="code" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a920c73b182b92e249842f2a2f1873cdf">CIMA</a>            = GLFW_KEY_UP,              </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a98efb129c9b6d594d7185148bf011633">   31</a></span>&#160;    <a class="code" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a98efb129c9b6d594d7185148bf011633">BAIXO</a>           = GLFW_KEY_DOWN,            </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a0442824c041b9618cd7c512205e7e6dc">   32</a></span>&#160;    <a class="code" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a0442824c041b9618cd7c512205e7e6dc">PAGE_UP</a>         = GLFW_KEY_PAGE_UP,         </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a714c5d27586a8bcbab274d9176da1539">   33</a></span>&#160;    <a class="code" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a714c5d27586a8bcbab274d9176da1539">PAGE_DOWN</a>       = GLFW_KEY_PAGE_DOWN,       </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a8f280224da64e98f2d52d50ec43bc197">   34</a></span>&#160;    <a class="code" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a8f280224da64e98f2d52d50ec43bc197">HOME</a>            = GLFW_KEY_HOME,            </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="input_8h.html#a79d014352949143f5f4f4e714517ee61adc6f24fd6915a3f2786a1b7045406924">   35</a></span>&#160;    <a class="code" href="input_8h.html#a79d014352949143f5f4f4e714517ee61adc6f24fd6915a3f2786a1b7045406924">END</a>             = GLFW_KEY_END,             </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="input_8h.html#a79d014352949143f5f4f4e714517ee61ad7aad311bce2e1d89035b9a3e29600fe">   36</a></span>&#160;    <a class="code" href="input_8h.html#a79d014352949143f5f4f4e714517ee61ad7aad311bce2e1d89035b9a3e29600fe">CAPS_LOCK</a>       = GLFW_KEY_CAPS_LOCK,       </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a6da59c886b07268173ff82fc0704421c">   37</a></span>&#160;    <a class="code" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a6da59c886b07268173ff82fc0704421c">SCROLL_LOCK</a>     = GLFW_KEY_SCROLL_LOCK,     </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a195220fec49ece142152e81d826f88ef">   38</a></span>&#160;    <a class="code" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a195220fec49ece142152e81d826f88ef">NUM_LOCK</a>        = GLFW_KEY_NUM_LOCK,        </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a4d21a707a0e58f08655db2cfc9961316">   39</a></span>&#160;    <a class="code" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a4d21a707a0e58f08655db2cfc9961316">PRINT_SCREEN</a>    = GLFW_KEY_PRINT_SCREEN,    </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a56b36d0d0bb01b339cf1041adc08e262">   40</a></span>&#160;    <a class="code" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a56b36d0d0bb01b339cf1041adc08e262">PAUSE</a>           = GLFW_KEY_PAUSE,           </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a5afea46882b06768ac8563d462999735">   41</a></span>&#160;    <a class="code" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a5afea46882b06768ac8563d462999735">F1</a>              = GLFW_KEY_F1,              </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="input_8h.html#a79d014352949143f5f4f4e714517ee61aa3c13a70de6599f4470373ec46d4f6bf">   42</a></span>&#160;    <a class="code" href="input_8h.html#a79d014352949143f5f4f4e714517ee61aa3c13a70de6599f4470373ec46d4f6bf">F2</a>              = GLFW_KEY_F2,              </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a10a5417c8e696606af65ec28c5fb2495">   43</a></span>&#160;    <a class="code" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a10a5417c8e696606af65ec28c5fb2495">F3</a>              = GLFW_KEY_F3,              </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a8d311dd8454951b86e27873c49ff1ec5">   44</a></span>&#160;    <a class="code" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a8d311dd8454951b86e27873c49ff1ec5">F4</a>              = GLFW_KEY_F4,              </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a265fb264db0c419e6cb73bce564cd517">   45</a></span>&#160;    <a class="code" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a265fb264db0c419e6cb73bce564cd517">F5</a>              = GLFW_KEY_F5,              </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="input_8h.html#a79d014352949143f5f4f4e714517ee61aa1e9d714a0238434a819235d4832f7d2">   46</a></span>&#160;    <a class="code" href="input_8h.html#a79d014352949143f5f4f4e714517ee61aa1e9d714a0238434a819235d4832f7d2">F6</a>              = GLFW_KEY_F6,              </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a6f111feaebfe5971b1243256d6417dc7">   47</a></span>&#160;    <a class="code" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a6f111feaebfe5971b1243256d6417dc7">F7</a>              = GLFW_KEY_F7,              </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="input_8h.html#a79d014352949143f5f4f4e714517ee61acb02fa2cede46dab94694927da16433d">   48</a></span>&#160;    <a class="code" href="input_8h.html#a79d014352949143f5f4f4e714517ee61acb02fa2cede46dab94694927da16433d">F8</a>              = GLFW_KEY_F8,              </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a9e27ab13e156f0125c6d8417dbe70946">   49</a></span>&#160;    <a class="code" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a9e27ab13e156f0125c6d8417dbe70946">F9</a>              = GLFW_KEY_F9,              </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="input_8h.html#a79d014352949143f5f4f4e714517ee61adf84767d83f4a35ab9dfa119cdbc7b3b">   50</a></span>&#160;    <a class="code" href="input_8h.html#a79d014352949143f5f4f4e714517ee61adf84767d83f4a35ab9dfa119cdbc7b3b">F10</a>             = GLFW_KEY_F10,             </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a511133ad89a0a17845508efb4d47b5e2">   51</a></span>&#160;    <a class="code" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a511133ad89a0a17845508efb4d47b5e2">F11</a>             = GLFW_KEY_F11,             </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a897dc84a58812cda1dbc2de4e74e4729">   52</a></span>&#160;    <a class="code" href="input_8h.html#a79d014352949143f5f4f4e714517ee61a897dc84a58812cda1dbc2de4e74e4729">F12</a>             = GLFW_KEY_F12,             </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="input_8h.html#a688a3217fab4610eb4866d88ac7854a0">   63</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="input_8h.html#a688a3217fab4610eb4866d88ac7854a0">BotoesMouse</a> {</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="input_8h.html#a688a3217fab4610eb4866d88ac7854a0a77bcdb8732dd4d943ea0b3dbc13e3dd1">   64</a></span>&#160;    <a class="code" href="input_8h.html#a688a3217fab4610eb4866d88ac7854a0a77bcdb8732dd4d943ea0b3dbc13e3dd1">BOTAO_ESQUERDO</a>  =GLFW_MOUSE_BUTTON_LEFT,    </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="input_8h.html#a688a3217fab4610eb4866d88ac7854a0ab8701b7034ad7dd2528a49d3d0890ad0">   65</a></span>&#160;    <a class="code" href="input_8h.html#a688a3217fab4610eb4866d88ac7854a0ab8701b7034ad7dd2528a49d3d0890ad0">BOTAO_DIREITO</a>   =GLFW_MOUSE_BUTTON_RIGHT,   </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="input_8h.html#a688a3217fab4610eb4866d88ac7854a0af3de843eef7f3c8bc60d0dbf9de507bd">   66</a></span>&#160;    <a class="code" href="input_8h.html#a688a3217fab4610eb4866d88ac7854a0af3de843eef7f3c8bc60d0dbf9de507bd">BOTAO_MEIO</a>      =GLFW_MOUSE_BUTTON_MIDDLE,  </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">/* -----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">    PUBLIC FUNCTIONS</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">----------------------------------------------------------------------------- */</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">// Teclado -------------------------------------------------</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="input_8h.html#af74c11fa3552eaaec9dac8c70bb03d13">tecla_pressionada</a>(<span class="keywordtype">int</span> tecla);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="input_8h.html#a66c87f4bb5d1d0dbd1d912dc51b35cdf">tecla_acabou_de_ser_apertada</a>(<span class="keywordtype">int</span> tecla);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="input_8h.html#abf962c70916168f8071aa15b4052dcce">tecla_acabou_de_ser_solta</a>(<span class="keywordtype">int</span> tecla);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">// Mouse ---------------------------------------------------</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="input_8h.html#ae4654d67da6912c53e120ae6fee0de0f">botao_mouse_pressionado</a>(<span class="keywordtype">int</span> botao);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="input_8h.html#a691bdec5ed8713a74e31d7d6368b8ea9">botao_mouse_acabou_de_ser_apertado</a>(<span class="keywordtype">int</span> botao);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="input_8h.html#a3a3792ef20d23b5ed1dced9a9e7fd332">botao_mouse_acabou_de_ser_solto</a>(<span class="keywordtype">int</span> botao);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment">/* -----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment">    PRIVATE FUNCTIONS</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">----------------------------------------------------------------------------- */</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="keywordtype">void</span> _mouse_position_callback(GLFWwindow* window, <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="keywordtype">void</span> _keyboard_key_callback(</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    GLFWwindow* window, <span class="keywordtype">int</span> key, <span class="keywordtype">int</span> scancode, <span class="keywordtype">int</span> action, <span class="keywordtype">int</span> mods</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="keywordtype">void</span> _mouse_button_callback(</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    GLFWwindow* window, <span class="keywordtype">int</span> button, <span class="keywordtype">int</span> action, <span class="keywordtype">int</span> mods</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="keywordtype">void</span> _update_input_system();</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="ainput_8h_html_a688a3217fab4610eb4866d88ac7854a0ab8701b7034ad7dd2528a49d3d0890ad0"><div class="ttname"><a href="input_8h.html#a688a3217fab4610eb4866d88ac7854a0ab8701b7034ad7dd2528a49d3d0890ad0">BOTAO_DIREITO</a></div><div class="ttdeci">@ BOTAO_DIREITO</div><div class="ttdoc">Botão direito do mouse.</div><div class="ttdef"><b>Definition:</b> input.h:65</div></div>
+<div class="ttc" id="ainput_8h_html_a79d014352949143f5f4f4e714517ee61a610b34ff160b74eb5e3b89aa35ea1671"><div class="ttname"><a href="input_8h.html#a79d014352949143f5f4f4e714517ee61a610b34ff160b74eb5e3b89aa35ea1671">DIREITA</a></div><div class="ttdeci">@ DIREITA</div><div class="ttdoc">Setinha para a direita.</div><div class="ttdef"><b>Definition:</b> input.h:28</div></div>
+<div class="ttc" id="ainput_8h_html_a79d014352949143f5f4f4e714517ee61a9e27ab13e156f0125c6d8417dbe70946"><div class="ttname"><a href="input_8h.html#a79d014352949143f5f4f4e714517ee61a9e27ab13e156f0125c6d8417dbe70946">F9</a></div><div class="ttdeci">@ F9</div><div class="ttdoc">Tecla F9.</div><div class="ttdef"><b>Definition:</b> input.h:49</div></div>
+<div class="ttc" id="ainput_8h_html_a79d014352949143f5f4f4e714517ee61af5297152557c7da396243000ca240e89"><div class="ttname"><a href="input_8h.html#a79d014352949143f5f4f4e714517ee61af5297152557c7da396243000ca240e89">ESC</a></div><div class="ttdeci">@ ESC</div><div class="ttdoc">Tecla Esc.</div><div class="ttdef"><b>Definition:</b> input.h:21</div></div>
+<div class="ttc" id="ainput_8h_html_a79d014352949143f5f4f4e714517ee61a265fb264db0c419e6cb73bce564cd517"><div class="ttname"><a href="input_8h.html#a79d014352949143f5f4f4e714517ee61a265fb264db0c419e6cb73bce564cd517">F5</a></div><div class="ttdeci">@ F5</div><div class="ttdoc">Tecla F5.</div><div class="ttdef"><b>Definition:</b> input.h:45</div></div>
+<div class="ttc" id="ainput_8h_html_a691bdec5ed8713a74e31d7d6368b8ea9"><div class="ttname"><a href="input_8h.html#a691bdec5ed8713a74e31d7d6368b8ea9">botao_mouse_acabou_de_ser_apertado</a></div><div class="ttdeci">bool botao_mouse_acabou_de_ser_apertado(int botao)</div><div class="ttdoc">Verifica se o botão do mouse foi apertado.</div></div>
+<div class="ttc" id="ainput_8h_html_a79d014352949143f5f4f4e714517ee61ad2534cebcf6f430484b7c931dd657ddc"><div class="ttname"><a href="input_8h.html#a79d014352949143f5f4f4e714517ee61ad2534cebcf6f430484b7c931dd657ddc">BACKSPACE</a></div><div class="ttdeci">@ BACKSPACE</div><div class="ttdoc">Tecla Backspace.</div><div class="ttdef"><b>Definition:</b> input.h:25</div></div>
+<div class="ttc" id="ainput_8h_html_a79d014352949143f5f4f4e714517ee61a8f280224da64e98f2d52d50ec43bc197"><div class="ttname"><a href="input_8h.html#a79d014352949143f5f4f4e714517ee61a8f280224da64e98f2d52d50ec43bc197">HOME</a></div><div class="ttdeci">@ HOME</div><div class="ttdoc">Tecla Home</div><div class="ttdef"><b>Definition:</b> input.h:34</div></div>
+<div class="ttc" id="ainput_8h_html_a79d014352949143f5f4f4e714517ee61a56b36d0d0bb01b339cf1041adc08e262"><div class="ttname"><a href="input_8h.html#a79d014352949143f5f4f4e714517ee61a56b36d0d0bb01b339cf1041adc08e262">PAUSE</a></div><div class="ttdeci">@ PAUSE</div><div class="ttdoc">Tecla Pause.</div><div class="ttdef"><b>Definition:</b> input.h:40</div></div>
+<div class="ttc" id="ainput_8h_html_a79d014352949143f5f4f4e714517ee61a920380215591395ea33ee5df8e293e19"><div class="ttname"><a href="input_8h.html#a79d014352949143f5f4f4e714517ee61a920380215591395ea33ee5df8e293e19">TAB</a></div><div class="ttdeci">@ TAB</div><div class="ttdoc">Tecla Tab.</div><div class="ttdef"><b>Definition:</b> input.h:24</div></div>
+<div class="ttc" id="ainput_8h_html_a79d014352949143f5f4f4e714517ee61a98efb129c9b6d594d7185148bf011633"><div class="ttname"><a href="input_8h.html#a79d014352949143f5f4f4e714517ee61a98efb129c9b6d594d7185148bf011633">BAIXO</a></div><div class="ttdeci">@ BAIXO</div><div class="ttdoc">Setinha para baixo.</div><div class="ttdef"><b>Definition:</b> input.h:31</div></div>
+<div class="ttc" id="ainput_8h_html_a3a3792ef20d23b5ed1dced9a9e7fd332"><div class="ttname"><a href="input_8h.html#a3a3792ef20d23b5ed1dced9a9e7fd332">botao_mouse_acabou_de_ser_solto</a></div><div class="ttdeci">bool botao_mouse_acabou_de_ser_solto(int botao)</div><div class="ttdoc">Verifica se o botão do mouse foi solto.</div></div>
+<div class="ttc" id="ainput_8h_html_a79d014352949143f5f4f4e714517ee61aa1e9d714a0238434a819235d4832f7d2"><div class="ttname"><a href="input_8h.html#a79d014352949143f5f4f4e714517ee61aa1e9d714a0238434a819235d4832f7d2">F6</a></div><div class="ttdeci">@ F6</div><div class="ttdoc">Tecla F6.</div><div class="ttdef"><b>Definition:</b> input.h:46</div></div>
+<div class="ttc" id="ainput_8h_html_ae4654d67da6912c53e120ae6fee0de0f"><div class="ttname"><a href="input_8h.html#ae4654d67da6912c53e120ae6fee0de0f">botao_mouse_pressionado</a></div><div class="ttdeci">bool botao_mouse_pressionado(int botao)</div><div class="ttdoc">Verifica se o botão do mouse está apertado.</div></div>
+<div class="ttc" id="ainput_8h_html_a688a3217fab4610eb4866d88ac7854a0a77bcdb8732dd4d943ea0b3dbc13e3dd1"><div class="ttname"><a href="input_8h.html#a688a3217fab4610eb4866d88ac7854a0a77bcdb8732dd4d943ea0b3dbc13e3dd1">BOTAO_ESQUERDO</a></div><div class="ttdeci">@ BOTAO_ESQUERDO</div><div class="ttdoc">Botão esquerdo do mouse.</div><div class="ttdef"><b>Definition:</b> input.h:64</div></div>
+<div class="ttc" id="ainput_8h_html_a688a3217fab4610eb4866d88ac7854a0af3de843eef7f3c8bc60d0dbf9de507bd"><div class="ttname"><a href="input_8h.html#a688a3217fab4610eb4866d88ac7854a0af3de843eef7f3c8bc60d0dbf9de507bd">BOTAO_MEIO</a></div><div class="ttdeci">@ BOTAO_MEIO</div><div class="ttdoc">Botão do meio do mouse (Pressionar a rodinha)</div><div class="ttdef"><b>Definition:</b> input.h:66</div></div>
+<div class="ttc" id="ainput_8h_html_a79d014352949143f5f4f4e714517ee61a511133ad89a0a17845508efb4d47b5e2"><div class="ttname"><a href="input_8h.html#a79d014352949143f5f4f4e714517ee61a511133ad89a0a17845508efb4d47b5e2">F11</a></div><div class="ttdeci">@ F11</div><div class="ttdoc">Tecla F11.</div><div class="ttdef"><b>Definition:</b> input.h:51</div></div>
+<div class="ttc" id="ainput_8h_html_a79d014352949143f5f4f4e714517ee61a6f111feaebfe5971b1243256d6417dc7"><div class="ttname"><a href="input_8h.html#a79d014352949143f5f4f4e714517ee61a6f111feaebfe5971b1243256d6417dc7">F7</a></div><div class="ttdeci">@ F7</div><div class="ttdoc">Tecla F7.</div><div class="ttdef"><b>Definition:</b> input.h:47</div></div>
+<div class="ttc" id="ainput_8h_html_a79d014352949143f5f4f4e714517ee61"><div class="ttname"><a href="input_8h.html#a79d014352949143f5f4f4e714517ee61">TeclasEspeciais</a></div><div class="ttdeci">TeclasEspeciais</div><div class="ttdoc">Teclas que não são letras ou números.</div><div class="ttdef"><b>Definition:</b> input.h:20</div></div>
+<div class="ttc" id="ainput_8h_html_a79d014352949143f5f4f4e714517ee61a9d61e82a9a12752f10aece1b22183913"><div class="ttname"><a href="input_8h.html#a79d014352949143f5f4f4e714517ee61a9d61e82a9a12752f10aece1b22183913">DELETE</a></div><div class="ttdeci">@ DELETE</div><div class="ttdoc">Tecla Delete.</div><div class="ttdef"><b>Definition:</b> input.h:27</div></div>
+<div class="ttc" id="ainput_8h_html_a79d014352949143f5f4f4e714517ee61a4d21a707a0e58f08655db2cfc9961316"><div class="ttname"><a href="input_8h.html#a79d014352949143f5f4f4e714517ee61a4d21a707a0e58f08655db2cfc9961316">PRINT_SCREEN</a></div><div class="ttdeci">@ PRINT_SCREEN</div><div class="ttdoc">Tecla Print Screen</div><div class="ttdef"><b>Definition:</b> input.h:39</div></div>
+<div class="ttc" id="ainput_8h_html_a688a3217fab4610eb4866d88ac7854a0"><div class="ttname"><a href="input_8h.html#a688a3217fab4610eb4866d88ac7854a0">BotoesMouse</a></div><div class="ttdeci">BotoesMouse</div><div class="ttdoc">Botões do mouse.</div><div class="ttdef"><b>Definition:</b> input.h:63</div></div>
+<div class="ttc" id="ainput_8h_html_a79d014352949143f5f4f4e714517ee61adc6f24fd6915a3f2786a1b7045406924"><div class="ttname"><a href="input_8h.html#a79d014352949143f5f4f4e714517ee61adc6f24fd6915a3f2786a1b7045406924">END</a></div><div class="ttdeci">@ END</div><div class="ttdoc">Tecla End</div><div class="ttdef"><b>Definition:</b> input.h:35</div></div>
+<div class="ttc" id="ainput_8h_html_a79d014352949143f5f4f4e714517ee61ad7aad311bce2e1d89035b9a3e29600fe"><div class="ttname"><a href="input_8h.html#a79d014352949143f5f4f4e714517ee61ad7aad311bce2e1d89035b9a3e29600fe">CAPS_LOCK</a></div><div class="ttdeci">@ CAPS_LOCK</div><div class="ttdoc">Tecla Caps Lock</div><div class="ttdef"><b>Definition:</b> input.h:36</div></div>
+<div class="ttc" id="ainput_8h_html_a79d014352949143f5f4f4e714517ee61a0442824c041b9618cd7c512205e7e6dc"><div class="ttname"><a href="input_8h.html#a79d014352949143f5f4f4e714517ee61a0442824c041b9618cd7c512205e7e6dc">PAGE_UP</a></div><div class="ttdeci">@ PAGE_UP</div><div class="ttdoc">Tecla Page Up</div><div class="ttdef"><b>Definition:</b> input.h:32</div></div>
+<div class="ttc" id="ainput_8h_html_a79d014352949143f5f4f4e714517ee61a5afea46882b06768ac8563d462999735"><div class="ttname"><a href="input_8h.html#a79d014352949143f5f4f4e714517ee61a5afea46882b06768ac8563d462999735">F1</a></div><div class="ttdeci">@ F1</div><div class="ttdoc">Tecla F1.</div><div class="ttdef"><b>Definition:</b> input.h:41</div></div>
+<div class="ttc" id="ainput_8h_html_a79d014352949143f5f4f4e714517ee61a195220fec49ece142152e81d826f88ef"><div class="ttname"><a href="input_8h.html#a79d014352949143f5f4f4e714517ee61a195220fec49ece142152e81d826f88ef">NUM_LOCK</a></div><div class="ttdeci">@ NUM_LOCK</div><div class="ttdoc">Tecla Num Lock</div><div class="ttdef"><b>Definition:</b> input.h:38</div></div>
+<div class="ttc" id="ainput_8h_html_a79d014352949143f5f4f4e714517ee61a10a5417c8e696606af65ec28c5fb2495"><div class="ttname"><a href="input_8h.html#a79d014352949143f5f4f4e714517ee61a10a5417c8e696606af65ec28c5fb2495">F3</a></div><div class="ttdeci">@ F3</div><div class="ttdoc">Tecla F3.</div><div class="ttdef"><b>Definition:</b> input.h:43</div></div>
+<div class="ttc" id="ainput_8h_html_a79d014352949143f5f4f4e714517ee61a8d311dd8454951b86e27873c49ff1ec5"><div class="ttname"><a href="input_8h.html#a79d014352949143f5f4f4e714517ee61a8d311dd8454951b86e27873c49ff1ec5">F4</a></div><div class="ttdeci">@ F4</div><div class="ttdoc">Tecla F4.</div><div class="ttdef"><b>Definition:</b> input.h:44</div></div>
+<div class="ttc" id="ainput_8h_html_a79d014352949143f5f4f4e714517ee61a714c5d27586a8bcbab274d9176da1539"><div class="ttname"><a href="input_8h.html#a79d014352949143f5f4f4e714517ee61a714c5d27586a8bcbab274d9176da1539">PAGE_DOWN</a></div><div class="ttdeci">@ PAGE_DOWN</div><div class="ttdoc">Tecla Page Down</div><div class="ttdef"><b>Definition:</b> input.h:33</div></div>
+<div class="ttc" id="ainput_8h_html_abf962c70916168f8071aa15b4052dcce"><div class="ttname"><a href="input_8h.html#abf962c70916168f8071aa15b4052dcce">tecla_acabou_de_ser_solta</a></div><div class="ttdeci">bool tecla_acabou_de_ser_solta(int tecla)</div><div class="ttdoc">Verifica se a tecla foi solta.</div></div>
+<div class="ttc" id="ainput_8h_html_a79d014352949143f5f4f4e714517ee61aa15c451953b2d2a93403afe786930d0f"><div class="ttname"><a href="input_8h.html#a79d014352949143f5f4f4e714517ee61aa15c451953b2d2a93403afe786930d0f">INSERT</a></div><div class="ttdeci">@ INSERT</div><div class="ttdoc">Tecla Insert.</div><div class="ttdef"><b>Definition:</b> input.h:26</div></div>
+<div class="ttc" id="ainput_8h_html_a79d014352949143f5f4f4e714517ee61a920c73b182b92e249842f2a2f1873cdf"><div class="ttname"><a href="input_8h.html#a79d014352949143f5f4f4e714517ee61a920c73b182b92e249842f2a2f1873cdf">CIMA</a></div><div class="ttdeci">@ CIMA</div><div class="ttdoc">Setinha para cima.</div><div class="ttdef"><b>Definition:</b> input.h:30</div></div>
+<div class="ttc" id="ainput_8h_html_a79d014352949143f5f4f4e714517ee61a951ab68bb8f7daafb78951107080904e"><div class="ttname"><a href="input_8h.html#a79d014352949143f5f4f4e714517ee61a951ab68bb8f7daafb78951107080904e">ENTER</a></div><div class="ttdeci">@ ENTER</div><div class="ttdoc">Tecla Enter.</div><div class="ttdef"><b>Definition:</b> input.h:22</div></div>
+<div class="ttc" id="ainput_8h_html_a79d014352949143f5f4f4e714517ee61a6da59c886b07268173ff82fc0704421c"><div class="ttname"><a href="input_8h.html#a79d014352949143f5f4f4e714517ee61a6da59c886b07268173ff82fc0704421c">SCROLL_LOCK</a></div><div class="ttdeci">@ SCROLL_LOCK</div><div class="ttdoc">Tecla Scroll Lock</div><div class="ttdef"><b>Definition:</b> input.h:37</div></div>
+<div class="ttc" id="ainput_8h_html_a79d014352949143f5f4f4e714517ee61a62d20d07f88d621127765d2553b234e6"><div class="ttname"><a href="input_8h.html#a79d014352949143f5f4f4e714517ee61a62d20d07f88d621127765d2553b234e6">ESPACO</a></div><div class="ttdeci">@ ESPACO</div><div class="ttdoc">Tecla Espaço.</div><div class="ttdef"><b>Definition:</b> input.h:23</div></div>
+<div class="ttc" id="ainput_8h_html_a66c87f4bb5d1d0dbd1d912dc51b35cdf"><div class="ttname"><a href="input_8h.html#a66c87f4bb5d1d0dbd1d912dc51b35cdf">tecla_acabou_de_ser_apertada</a></div><div class="ttdeci">bool tecla_acabou_de_ser_apertada(int tecla)</div><div class="ttdoc">Verifica se a tecla foi apertada.</div></div>
+<div class="ttc" id="ainput_8h_html_a79d014352949143f5f4f4e714517ee61adf84767d83f4a35ab9dfa119cdbc7b3b"><div class="ttname"><a href="input_8h.html#a79d014352949143f5f4f4e714517ee61adf84767d83f4a35ab9dfa119cdbc7b3b">F10</a></div><div class="ttdeci">@ F10</div><div class="ttdoc">Tecla F10.</div><div class="ttdef"><b>Definition:</b> input.h:50</div></div>
+<div class="ttc" id="ainput_8h_html_af74c11fa3552eaaec9dac8c70bb03d13"><div class="ttname"><a href="input_8h.html#af74c11fa3552eaaec9dac8c70bb03d13">tecla_pressionada</a></div><div class="ttdeci">bool tecla_pressionada(int tecla)</div><div class="ttdoc">Verifica se a tecla está apertada.</div></div>
+<div class="ttc" id="ainput_8h_html_a79d014352949143f5f4f4e714517ee61acb02fa2cede46dab94694927da16433d"><div class="ttname"><a href="input_8h.html#a79d014352949143f5f4f4e714517ee61acb02fa2cede46dab94694927da16433d">F8</a></div><div class="ttdeci">@ F8</div><div class="ttdoc">Tecla F8.</div><div class="ttdef"><b>Definition:</b> input.h:48</div></div>
+<div class="ttc" id="ainput_8h_html_a79d014352949143f5f4f4e714517ee61a2357e90b5b6d93e8cfc3e9b58a687f91"><div class="ttname"><a href="input_8h.html#a79d014352949143f5f4f4e714517ee61a2357e90b5b6d93e8cfc3e9b58a687f91">ESQUERDA</a></div><div class="ttdeci">@ ESQUERDA</div><div class="ttdoc">Setinha para a esquerda.</div><div class="ttdef"><b>Definition:</b> input.h:29</div></div>
+<div class="ttc" id="ainput_8h_html_a79d014352949143f5f4f4e714517ee61a897dc84a58812cda1dbc2de4e74e4729"><div class="ttname"><a href="input_8h.html#a79d014352949143f5f4f4e714517ee61a897dc84a58812cda1dbc2de4e74e4729">F12</a></div><div class="ttdeci">@ F12</div><div class="ttdoc">Tecla F12.</div><div class="ttdef"><b>Definition:</b> input.h:52</div></div>
+<div class="ttc" id="ainput_8h_html_a79d014352949143f5f4f4e714517ee61aa3c13a70de6599f4470373ec46d4f6bf"><div class="ttname"><a href="input_8h.html#a79d014352949143f5f4f4e714517ee61aa3c13a70de6599f4470373ec46d4f6bf">F2</a></div><div class="ttdeci">@ F2</div><div class="ttdoc">Tecla F2.</div><div class="ttdef"><b>Definition:</b> input.h:42</div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="input_8h.html">input.h</a></li>
+    <li class="footer">Gerado por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

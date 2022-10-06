@@ -1,0 +1,48 @@
+var input_8h =
+[
+    [ "BotoesMouse", "input_8h.html#a688a3217fab4610eb4866d88ac7854a0", [
+      [ "BOTAO_ESQUERDO", "input_8h.html#a688a3217fab4610eb4866d88ac7854a0a77bcdb8732dd4d943ea0b3dbc13e3dd1", null ],
+      [ "BOTAO_DIREITO", "input_8h.html#a688a3217fab4610eb4866d88ac7854a0ab8701b7034ad7dd2528a49d3d0890ad0", null ],
+      [ "BOTAO_MEIO", "input_8h.html#a688a3217fab4610eb4866d88ac7854a0af3de843eef7f3c8bc60d0dbf9de507bd", null ]
+    ] ],
+    [ "TeclasEspeciais", "input_8h.html#a79d014352949143f5f4f4e714517ee61", [
+      [ "ESC", "input_8h.html#a79d014352949143f5f4f4e714517ee61af5297152557c7da396243000ca240e89", null ],
+      [ "ENTER", "input_8h.html#a79d014352949143f5f4f4e714517ee61a951ab68bb8f7daafb78951107080904e", null ],
+      [ "ESPACO", "input_8h.html#a79d014352949143f5f4f4e714517ee61a62d20d07f88d621127765d2553b234e6", null ],
+      [ "TAB", "input_8h.html#a79d014352949143f5f4f4e714517ee61a920380215591395ea33ee5df8e293e19", null ],
+      [ "BACKSPACE", "input_8h.html#a79d014352949143f5f4f4e714517ee61ad2534cebcf6f430484b7c931dd657ddc", null ],
+      [ "INSERT", "input_8h.html#a79d014352949143f5f4f4e714517ee61aa15c451953b2d2a93403afe786930d0f", null ],
+      [ "DELETE", "input_8h.html#a79d014352949143f5f4f4e714517ee61a9d61e82a9a12752f10aece1b22183913", null ],
+      [ "DIREITA", "input_8h.html#a79d014352949143f5f4f4e714517ee61a610b34ff160b74eb5e3b89aa35ea1671", null ],
+      [ "ESQUERDA", "input_8h.html#a79d014352949143f5f4f4e714517ee61a2357e90b5b6d93e8cfc3e9b58a687f91", null ],
+      [ "CIMA", "input_8h.html#a79d014352949143f5f4f4e714517ee61a920c73b182b92e249842f2a2f1873cdf", null ],
+      [ "BAIXO", "input_8h.html#a79d014352949143f5f4f4e714517ee61a98efb129c9b6d594d7185148bf011633", null ],
+      [ "PAGE_UP", "input_8h.html#a79d014352949143f5f4f4e714517ee61a0442824c041b9618cd7c512205e7e6dc", null ],
+      [ "PAGE_DOWN", "input_8h.html#a79d014352949143f5f4f4e714517ee61a714c5d27586a8bcbab274d9176da1539", null ],
+      [ "HOME", "input_8h.html#a79d014352949143f5f4f4e714517ee61a8f280224da64e98f2d52d50ec43bc197", null ],
+      [ "END", "input_8h.html#a79d014352949143f5f4f4e714517ee61adc6f24fd6915a3f2786a1b7045406924", null ],
+      [ "CAPS_LOCK", "input_8h.html#a79d014352949143f5f4f4e714517ee61ad7aad311bce2e1d89035b9a3e29600fe", null ],
+      [ "SCROLL_LOCK", "input_8h.html#a79d014352949143f5f4f4e714517ee61a6da59c886b07268173ff82fc0704421c", null ],
+      [ "NUM_LOCK", "input_8h.html#a79d014352949143f5f4f4e714517ee61a195220fec49ece142152e81d826f88ef", null ],
+      [ "PRINT_SCREEN", "input_8h.html#a79d014352949143f5f4f4e714517ee61a4d21a707a0e58f08655db2cfc9961316", null ],
+      [ "PAUSE", "input_8h.html#a79d014352949143f5f4f4e714517ee61a56b36d0d0bb01b339cf1041adc08e262", null ],
+      [ "F1", "input_8h.html#a79d014352949143f5f4f4e714517ee61a5afea46882b06768ac8563d462999735", null ],
+      [ "F2", "input_8h.html#a79d014352949143f5f4f4e714517ee61aa3c13a70de6599f4470373ec46d4f6bf", null ],
+      [ "F3", "input_8h.html#a79d014352949143f5f4f4e714517ee61a10a5417c8e696606af65ec28c5fb2495", null ],
+      [ "F4", "input_8h.html#a79d014352949143f5f4f4e714517ee61a8d311dd8454951b86e27873c49ff1ec5", null ],
+      [ "F5", "input_8h.html#a79d014352949143f5f4f4e714517ee61a265fb264db0c419e6cb73bce564cd517", null ],
+      [ "F6", "input_8h.html#a79d014352949143f5f4f4e714517ee61aa1e9d714a0238434a819235d4832f7d2", null ],
+      [ "F7", "input_8h.html#a79d014352949143f5f4f4e714517ee61a6f111feaebfe5971b1243256d6417dc7", null ],
+      [ "F8", "input_8h.html#a79d014352949143f5f4f4e714517ee61acb02fa2cede46dab94694927da16433d", null ],
+      [ "F9", "input_8h.html#a79d014352949143f5f4f4e714517ee61a9e27ab13e156f0125c6d8417dbe70946", null ],
+      [ "F10", "input_8h.html#a79d014352949143f5f4f4e714517ee61adf84767d83f4a35ab9dfa119cdbc7b3b", null ],
+      [ "F11", "input_8h.html#a79d014352949143f5f4f4e714517ee61a511133ad89a0a17845508efb4d47b5e2", null ],
+      [ "F12", "input_8h.html#a79d014352949143f5f4f4e714517ee61a897dc84a58812cda1dbc2de4e74e4729", null ]
+    ] ],
+    [ "botao_mouse_acabou_de_ser_apertado", "input_8h.html#a691bdec5ed8713a74e31d7d6368b8ea9", null ],
+    [ "botao_mouse_acabou_de_ser_solto", "input_8h.html#a3a3792ef20d23b5ed1dced9a9e7fd332", null ],
+    [ "botao_mouse_pressionado", "input_8h.html#ae4654d67da6912c53e120ae6fee0de0f", null ],
+    [ "tecla_acabou_de_ser_apertada", "input_8h.html#a66c87f4bb5d1d0dbd1d912dc51b35cdf", null ],
+    [ "tecla_acabou_de_ser_solta", "input_8h.html#abf962c70916168f8071aa15b4052dcce", null ],
+    [ "tecla_pressionada", "input_8h.html#af74c11fa3552eaaec9dac8c70bb03d13", null ]
+];
