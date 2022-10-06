@@ -1,5 +1,11 @@
 # jogo.h - Biblioteca de alto nível para desenvolvimento de jogos em C
 
+<p align="left">
+    <a href="https://syndelis.github.io/jogo.h" alt="Documentação">
+    <img src="https://img.shields.io/static/v1?label=Docs&message=GitHub Pages&color=blue&style=for-the-badge&logo=gitbook" />
+    </a>
+</p>
+
 - [Sobre a biblioteca](#sobre-a-biblioteca-▲)
 - [Como usar](#como-usar-▲)
 - [Instalando as Dependências](#instalando-as-dependências-▲)
@@ -109,6 +115,17 @@ Compilar diretamente no Windows ainda está em fase de testes. No momento, recom
 
 ## Documentação [▲]
 
-A documentção está em construção ⚠️
+A documentação está disponível neste link: **[docs]**.
+
+Ela foi feita usando [Doxygen](https://doxygen.nl) com o tema
+[Doxygen Awesome CSS](https://jothepro.github.io/doxygen-awesome-css/index.html). Para *buildar* a documentação, instale `doxygen` e execute
+
+```sh
+$ make docs
+```
+
+A documentação estará disponível em HTML e como páginas do
+[manual](https://www.kernel.org/doc/man-pages/) Linux.
 
 [▲]: #jogoh---biblioteca-de-alto-nível-para-desenvolvimento-de-jogos-em-c
+[docs]: https://syndelis.github.com/jogo.h
