@@ -13,7 +13,7 @@
 #include <stb/stb_ds.h>
 
 #include "../include/audio.h"
-#include "../include/exceptions.h"
+#include "../include/common.h"
 
 #define SAMPLE_FORMAT   ma_format_f32
 #define CHANNEL_COUNT   2

@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <stdarg.h>
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <GL/gl.h>
@@ -12,11 +13,10 @@
 #include "../include/image.h"
 #include "../include/input.h"
 #include "../include/audio.h"
-#include "../include/exceptions.h"
+#include "../include/common.h"
 
 GLFWwindow *window = NULL;
 int window_width = 0, window_height = 0;
-bool fullscreen = false;
 
 #define BASE_GLEW_ERROR ERROR " Não foi possível inicializar o GLEW:\n"
 
@@ -30,17 +30,34 @@ void _window_framebuffer_size_callback(GLFWwindow* window, int width, int height
     PUBLIC FUNCTIONS
 ----------------------------------------------------------------------------- */
 
-void tela_cheia() {
-    fullscreen = true;
-}
+void _abre_janela(int n, ...) {
 
-void abre_janela(int largura, int altura) {
+    if (n > 2) {
+        fprintf(
+            stderr,
+            ERROR "abre_janela() recebe 1 ou 2 parâmetros. "
+            "%d foram passados!\n"
+            "Exemplos de chamadas corretas para essa função:\n"
+            "\tabre_janela(TELA_CHEIA); Abre o jogo em tela cheia\n"
+            "\tabre_janela(800, 600); Abre o jogo nas dimensões 800x600\n",
+            n
+        );
+        exit(EXIT_FAILURE);
+    }
+
+    if (!glfwInit())
+        exit(EXIT_FAILURE);
+
+    va_list args;
+    va_start(args, n);
+
+    int largura = va_arg(args, int);
 
     // A NULL monitor will create a "windowed window", while an actual monitor
     // pointer will create a fullscreen window
     GLFWmonitor *monitor = NULL;
 
-    if (fullscreen) {
+    if (n == 1 && largura == TELA_CHEIA) {
         monitor = glfwGetPrimaryMonitor();
         const GLFWvidmode *mode = glfwGetVideoMode(monitor);
 
@@ -49,14 +66,15 @@ void abre_janela(int largura, int altura) {
     }
 
     else {
+        int altura = va_arg(args, int);
+
         window_width = largura;
         window_height = altura;
     }
 
-    // GLFW Setup ----------------------
+    va_end(args);
 
-    if (!glfwInit())
-        exit(EXIT_FAILURE);
+    // GLFW Setup ----------------------
 
     window = glfwCreateWindow(
         window_width, window_height,

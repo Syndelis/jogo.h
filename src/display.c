@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include "../include/display.h"
+#include "../include/common.h"
 
 /* -----------------------------------------------------------------------------
     PUBLIC FUNCTIONS
@@ -31,7 +32,7 @@ void _cor(int n, ...) {
     if (n == 2 || n > 4) {
         fprintf(
             stderr,
-            "\033[32;41mERRO!\033[m cor() recebe 1, 3 ou 4 parâmetros. "
+            ERROR "cor() recebe 1, 3 ou 4 parâmetros. "
             "%d foram passados!\n"
             "Exemplos de chamadas corretas para essa função:\n"
             "\tcor(VERMELHO); Produz a cor \033[31mvermelha\033[m\n"

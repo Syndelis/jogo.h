@@ -3,6 +3,10 @@
 *.o
 *.a
 
+# Documentation
+/docs/man
+/docs/html
+
 # VS Code files
 /.vscode/
 !/.vscode/launch.json

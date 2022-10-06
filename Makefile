@@ -21,7 +21,7 @@ OBJ=$(foreach src,$(SRC),$(OBJ_DIR)/$(notdir $(basename $(src))).o)
 LIB=libjogo.a
 LIB_PART=libjogo-part.a
 
-.PHONY: includes links
+.PHONY: includes links docs
 VPATH=$(wildcard $(SRC_DIR)/*) $(dir GLFW_LIB)
 
 all: $(GLFW_LIB) $(OBJ_DIR) $(LIB)
@@ -57,3 +57,11 @@ includes:
 
 links:
 	@echo "$(LINKS)"
+
+
+docs:
+	mkdir -p docs/
+	doxygen
+
+clean-docs:
+	rm -rf docs/{html,man}

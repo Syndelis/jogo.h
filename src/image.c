@@ -22,7 +22,7 @@
 
 #include "../include/display.h"
 #include "../include/image.h"
-#include "../include/exceptions.h"
+#include "../include/common.h"
 
 #define ASCII_CHR_START 32
 #define ASCII_CHR_END   252
