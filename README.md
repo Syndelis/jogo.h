@@ -6,13 +6,13 @@
     </a>
 </p>
 
-- [Sobre a biblioteca](#sobre-a-biblioteca-▲)
-- [Como usar](#como-usar-▲)
-- [Instalando as Dependências](#instalando-as-dependências-▲)
-    - [Debian/Ubuntu/Pop_OS!/ElementaryOS](#distribuições-baseadas-em-debian-ubuntupoposelementaryos)
+- [Sobre a biblioteca](#sobre-a-biblioteca-)
+- [Como usar](#como-usar-)
+- [Instalando as Dependências](#instalando-as-dependências-)
+    - [Debian/Ubuntu/Pop_OS!/ElementaryOS](#distribuições-baseadas-em-debian-ubuntupop_oselementaryos)
     - [ArchLinux](#distribuições-baseadas-em-archlinux)
     - [Window](#windows)
-- [Documentação](#documentação-▲)
+- [Documentação](#documentação-)
 
 ---
 
