@@ -21,6 +21,17 @@
  */
 #define TELA_CHEIA 0x0FFFFFFF
 
+/*!
+ * @var largura_janela
+ * @brief Largura da janela. Útil para saber qual é o maior X possível.
+ */
+
+/*!
+ * @var altura_janela
+ * @brief Altura da janela. Útil para saber qual é o maior Y possível.
+ */
+extern int largura_janela, altura_janela;
+
 extern GLFWwindow *window;
 
 /* -----------------------------------------------------------------------------

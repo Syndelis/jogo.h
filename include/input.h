@@ -8,7 +8,25 @@
 
 #include <GLFW/glfw3.h>
 
+/*!
+ * @var mouse_x
+ * @brief Posição X do mouse.
+ */
+
+/*!
+ * @var mouse_y
+ * @brief Posição Y do mouse.
+ */
 extern int mouse_x, mouse_y;
+
+/*!
+ * @var roda_do_mouse
+ * @brief Quantidade que a roda do mouse foi girada no último passo de tempo.
+ * @details Positivo significa rolagem para cima, enquanto negativo significa
+ *          rolagem para baixo. Note que este valor é resetado a cada passo de
+ *         tempo.
+ */
+extern double roda_do_mouse;
 
 /*!
  * @enum TeclasEspeciais
@@ -127,6 +145,10 @@ void _keyboard_key_callback(
 
 void _mouse_button_callback(
     GLFWwindow* window, int button, int action, int mods
+);
+
+void _mouse_scroll_wheel_callback(
+    GLFWwindow* window, double xoffset, double yoffset
 );
 
 void _update_input_system();

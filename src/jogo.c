@@ -16,7 +16,7 @@
 #include "../include/common.h"
 
 GLFWwindow *window = NULL;
-int window_width = 0, window_height = 0;
+int largura_janela = 0, altura_janela = 0;
 
 #define BASE_GLEW_ERROR ERROR " Não foi possível inicializar o GLEW:\n"
 
@@ -61,15 +61,15 @@ void _abre_janela(int n, ...) {
         monitor = glfwGetPrimaryMonitor();
         const GLFWvidmode *mode = glfwGetVideoMode(monitor);
 
-        window_width = mode->width;
-        window_height = mode->height;
+        largura_janela = mode->width;
+        altura_janela = mode->height;
     }
 
     else {
         int altura = va_arg(args, int);
 
-        window_width = largura;
-        window_height = altura;
+        largura_janela = largura;
+        altura_janela = altura;
     }
 
     va_end(args);
@@ -77,7 +77,7 @@ void _abre_janela(int n, ...) {
     // GLFW Setup ----------------------
 
     window = glfwCreateWindow(
-        window_width, window_height,
+        largura_janela, altura_janela,
         "Jogo em C", monitor, NULL
     );
 
@@ -87,6 +87,7 @@ void _abre_janela(int n, ...) {
     glfwSetCursorPosCallback(window, _mouse_position_callback);
     glfwSetKeyCallback(window, _keyboard_key_callback);
     glfwSetMouseButtonCallback(window, _mouse_button_callback);
+    glfwSetScrollCallback(window, _mouse_scroll_wheel_callback);
     glfwSetFramebufferSizeCallback(window, _window_framebuffer_size_callback);
 
     // GL Setup ------------------------
@@ -97,7 +98,7 @@ void _abre_janela(int n, ...) {
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glEnable(GL_MULTISAMPLE);
 
-    _window_framebuffer_size_callback(window, window_width, window_height);
+    _window_framebuffer_size_callback(window, largura_janela, altura_janela);
 
     // GLEW Setup ----------------------
 
@@ -170,6 +171,8 @@ void fecha_janela() {
 bool janela_esta_aberta() {
 
     _update_input_system();
+    _update_drawing_system();
+
     glfwPollEvents();
     bool is_open = !glfwWindowShouldClose(window);
 
@@ -202,7 +205,7 @@ void _window_framebuffer_size_callback(GLFWwindow *window, int width, int height
     glLoadIdentity();
     glOrtho(0, width, height, 0, 1, -1);
 
-    window_width = width;
-    window_height = height;
+    largura_janela = width;
+    altura_janela = height;
 
 }

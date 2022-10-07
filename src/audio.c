@@ -45,6 +45,7 @@ Sound *_insert_sound(char *filename);
 void _rewind_sound(Sound *sound);
 Sound *_duplicate_sound(Sound *last);
 void _play_sound(char *filename, bool loop);
+void _loop_sound(ma_sound *sound, bool loop);
 
 /* -----------------------------------------------------------------------------
     PUBLIC FUNCTIONS
@@ -151,7 +152,7 @@ void _play_sound(char *filename, bool loop) {
         // If it is: duplicate it
         if (all_playing) {
             new_entry = _duplicate_sound(last);
-            ma_sound_set_looping(&new_entry->_sound, loop);
+            _loop_sound(&new_entry->_sound, loop);
             ma_sound_start(&new_entry->_sound);
         }
 
@@ -159,7 +160,7 @@ void _play_sound(char *filename, bool loop) {
         else {
             ma_sound_stop(&last->_sound);
             _rewind_sound(last);
-            ma_sound_set_looping(&new_entry->_sound, loop);
+            _loop_sound(&new_entry->_sound, loop);
             ma_sound_start(&last->_sound);
         }
 
@@ -167,7 +168,7 @@ void _play_sound(char *filename, bool loop) {
 
     else {
         new_entry = _insert_sound(filename);
-        ma_sound_set_looping(&new_entry->_sound, loop);
+        _loop_sound(&new_entry->_sound, loop);
         ma_sound_start(&new_entry->_sound);
     }
 
@@ -201,7 +202,10 @@ void _terminate_sound_system() {
         // We don't own the data for the head, so it needs to be unititialized
         // separately
 
-        ma_sound_uninit(&sound_hashmap[entry_idx].value._sound);
+        // This line causes a double free for some unknown reason, even though
+        // `ma_sound_uninit(&a->_sound);` does not
+
+        // ma_sound_uninit(&(sound_hashmap[entry_idx].value._sound));
 
         a = sound_hashmap[entry_idx].value.next;
         while (a) {
@@ -258,6 +262,17 @@ void _rewind_sound(Sound *sound) {
 
     ma_sound_seek_to_pcm_frame(&sound->_sound, 0);
 
+}
+
+// -----------------------------------------------------------------------------
+
+void _loop_sound(ma_sound *sound, bool loop) {
+
+    // For some reason, setting `ma_sound_set_looping(_, MA_FALSE)` can result
+    // in a segmentation fault, hence the `if` statement
+
+    if (loop)
+        ma_sound_set_looping(sound, MA_TRUE);
 }
 
 // -----------------------------------------------------------------------------

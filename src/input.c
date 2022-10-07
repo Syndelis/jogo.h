@@ -14,6 +14,8 @@ __uint128_t printable_key_pressed = 0, function_key_pressed = 0,
 
 short int mouse_button_pressed = 0, last_mouse_button_pressed = 0;
 
+double roda_do_mouse = 0;
+
 /* -----------------------------------------------------------------------------
     FORWARD DECLARATIONS
 ----------------------------------------------------------------------------- */
@@ -144,8 +146,17 @@ void _mouse_button_callback(
 
 // -----------------------------------------------------------------------------
 
+void _mouse_scroll_wheel_callback(
+    GLFWwindow* window, double xoffset, double yoffset
+) {
+    roda_do_mouse += yoffset;
+}
+
+// -----------------------------------------------------------------------------
+
 void _update_input_system() {
     last_printable_key_pressed = printable_key_pressed;
     last_function_key_pressed = function_key_pressed;
     last_mouse_button_pressed = mouse_button_pressed;
+    roda_do_mouse = 0;
 }

@@ -47,6 +47,12 @@ enum Cores {
     MARROM_CLARO    = 0x854112,
 };
 
+/*!
+ * @typedef ponto
+ * @brief Um ponto no plano cartesiano. É um vetor de 2 inteiros {x, y}.
+ */
+typedef int ponto[2];
+
 /* -----------------------------------------------------------------------------
     PUBLIC FUNCTIONS
 ----------------------------------------------------------------------------- */
@@ -103,6 +109,60 @@ enum Cores {
  */
 DISPLAY_FUNC(desenha_retangulo, int largura, int altura);
 
+/*!
+ * @brief Desenha um círculo.
+ * @param x,y       Posição do círculo na tela.
+ * @param raio      Raio do círculo.
+ * @returns @c void
+ */
+DISPLAY_FUNC(desenha_circulo, int raio);
+
+/*!
+ * @brief Determina se as próximas figuras devem ser preenchidas ou somente deve
+            ser desenhado o contorno.
+ * @param ativo     @c true para preenchimento, @c false para contorno.
+ * @returns @c void
+ */
+void preenchimento(bool ativo);
+
+/*!
+ * @brief Desenha um polígono arbitrário.
+ * @param pontos    Vetor de @ref ponto's que formam o polígono.
+ * @param qtd_pontos    Número de pontos no vetor.
+ * @returns @c void
+ */
+void desenha_poligono(ponto *pontos, int qtd_pontos);
+
+/*!
+ * @brief Rotaciona os próximos desenhos em um @ref angulo específico em torno
+ *          do ponto @ref x, @ref y
+ * @param x,y       Âncora de rotação.
+ * @param angulo      Ângulo de rotação em radianos.
+ * @returns @c void
+ */
+DISPLAY_FUNC(rotacao, double angulo);
+
+/*!
+ * @brief Reinicia a rotação para o valor padrão.
+ * @returns @c void
+ */
+void reseta_rotacao();
+
+/*!
+ * @brief Aplica zoom para os próximos desenhos de @ref fator no ponto
+ *          @ref x, @ref y
+ * @param x,y       Âncora de zoom.
+ * @param fator     Fator de zoom a ser aplicado (1.0 = 100%, zoom normal).
+ * @returns @c void
+ */
+DISPLAY_FUNC(zoom, double fator);
+
+/*!
+ * @brief Reinicia o zoom para o valor padrão.
+ * @returns @c void
+ */
+void reseta_zoom();
+
 /* -----------------------------------------------------------------------------
     PRIVATE FUNCTIONS
 ----------------------------------------------------------------------------- */
@@ -110,5 +170,6 @@ DISPLAY_FUNC(desenha_retangulo, int largura, int altura);
 // If removed, triggers a "-Wimplicit-function-declaration", but works
 // nonetheless
 void _cor(int n, ...);
+void _update_drawing_system();
 
 #endif
