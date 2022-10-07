@@ -23,11 +23,23 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "jogo.h", "index.html", [
+    [ "jogo.h - Biblioteca de alto nível para desenvolvimento de jogos em C", "index.html", [
+      [ "Sobre a biblioteca <a href=\"#jogoh---biblioteca-de-alto-nível-para-desenvolvimento-de-jogos-em-c\">▲</a>", "index.html#autotoc_md2", null ],
+      [ "Como usar <a href=\"#jogoh---biblioteca-de-alto-nível-para-desenvolvimento-de-jogos-em-c\">▲</a>", "index.html#autotoc_md4", null ],
+      [ "Instalando as Dependências <a href=\"#jogoh---biblioteca-de-alto-nível-para-desenvolvimento-de-jogos-em-c\">▲</a>", "index.html#autotoc_md6", [
+        [ "Distribuições baseadas em Debian (Ubuntu/Pop_OS!/ElementaryOS):", "index.html#autotoc_md7", null ],
+        [ "Distribuições baseadas em ArchLinux:", "index.html#autotoc_md8", null ],
+        [ "Windows", "index.html#autotoc_md9", null ]
+      ] ],
+      [ "Documentação <a href=\"#jogoh---biblioteca-de-alto-nível-para-desenvolvimento-de-jogos-em-c\">▲</a>", "index.html#autotoc_md10", null ]
+    ] ],
     [ "Ficheiros", "files.html", [
       [ "Lista de ficheiros", "files.html", "files_dup" ],
       [ "Globais", "globals.html", [
         [ "Tudo", "globals.html", null ],
         [ "Funções", "globals_func.html", null ],
+        [ "Variáveis", "globals_vars.html", null ],
+        [ "Definições de tipos", "globals_type.html", null ],
         [ "Enumerações", "globals_enum.html", null ],
         [ "Valores de enumerações", "globals_eval.html", null ],
         [ "Macros", "globals_defs.html", null ]

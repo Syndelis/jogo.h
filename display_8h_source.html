@@ -165,31 +165,56 @@ $(document).ready(function(){initNavTree('display_8h_source.html',''); initResiz
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    MARROM_CLARO    = 0x854112,</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;};</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">/* -----------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">    PUBLIC FUNCTIONS</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">----------------------------------------------------------------------------- */</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#define DISPLAY_FUNC(func, ...) void func(int x, int y, ##__VA_ARGS__)</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="display_8h.html#aecffedf3afb245d14fe0a1efbd6756c8">   54</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">int</span> <a class="code" href="display_8h.html#aecffedf3afb245d14fe0a1efbd6756c8">ponto</a>[2];</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">// Functions -----------------------------------------------</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="display_8h.html#a8389bb9dd31a2931bcbad45e441a9127">   76</a></span>&#160;<span class="preprocessor">#define cor(...) _cor(NARGS(__VA_ARGS__), __VA_ARGS__)</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;DISPLAY_FUNC(<a class="code" href="display_8h.html#a14d933f581bc34cc5b78e3fb86c36bdd">desenha_retangulo</a>, <span class="keywordtype">int</span> largura, <span class="keywordtype">int</span> altura);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">/* -----------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">    PRIVATE FUNCTIONS</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">----------------------------------------------------------------------------- */</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">// If removed, triggers a &quot;-Wimplicit-function-declaration&quot;, but works</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">// nonetheless</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keywordtype">void</span> _cor(<span class="keywordtype">int</span> n, ...);</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">/* -----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">    PUBLIC FUNCTIONS</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">----------------------------------------------------------------------------- */</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#define DISPLAY_FUNC(func, ...) void func(int x, int y, ##__VA_ARGS__)</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">// Functions -----------------------------------------------</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="display_8h.html#a8389bb9dd31a2931bcbad45e441a9127">   82</a></span>&#160;<span class="preprocessor">#define cor(...) _cor(NARGS(__VA_ARGS__), __VA_ARGS__)</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;DISPLAY_FUNC(<a class="code" href="display_8h.html#a14d933f581bc34cc5b78e3fb86c36bdd">desenha_retangulo</a>, <span class="keywordtype">int</span> largura, <span class="keywordtype">int</span> altura);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;DISPLAY_FUNC(<a class="code" href="display_8h.html#abab6d93a27cbcdb99fb31b3cceb1651b">desenha_circulo</a>, <span class="keywordtype">int</span> raio);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="keywordtype">void</span> <a class="code" href="display_8h.html#ac224d83d0e3e0c49e9af596b43c18844">preenchimento</a>(<span class="keywordtype">bool</span> ativo);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="keywordtype">void</span> <a class="code" href="display_8h.html#a74c66947ed2bc6422b41c4215c4714b5">desenha_poligono</a>(<a class="code" href="display_8h.html#aecffedf3afb245d14fe0a1efbd6756c8">ponto</a> *pontos, <span class="keywordtype">int</span> qtd_pontos);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;DISPLAY_FUNC(<a class="code" href="display_8h.html#a4d231b2d1b94baa25c5b449e58b059e0">rotacao</a>, <span class="keywordtype">double</span> angulo);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="keywordtype">void</span> <a class="code" href="display_8h.html#a2b4c31f8db6e550745b7770627ab99e3">reseta_rotacao</a>();</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;DISPLAY_FUNC(<a class="code" href="display_8h.html#af6dff94a63adee2057aba261f4a2af85">zoom</a>, <span class="keywordtype">double</span> fator);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="keywordtype">void</span> <a class="code" href="display_8h.html#a538d2d61d2f76bb202ebb63d0a216591">reseta_zoom</a>();</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment">/* -----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="comment">    PRIVATE FUNCTIONS</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="comment">----------------------------------------------------------------------------- */</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="comment">// If removed, triggers a &quot;-Wimplicit-function-declaration&quot;, but works</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="comment">// nonetheless</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="keywordtype">void</span> _cor(<span class="keywordtype">int</span> n, ...);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="keywordtype">void</span> _update_drawing_system();</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="adisplay_8h_html_af3dd3e00e094f0b1eadb849360426b5d"><div class="ttname"><a href="display_8h.html#af3dd3e00e094f0b1eadb849360426b5d">Cores</a></div><div class="ttdeci">Cores</div><div class="ttdoc">Cores que podem ser usadas na função cor()</div><div class="ttdef"><b>Definition:</b> display.h:18</div></div>
+<div class="ttc" id="adisplay_8h_html_af6dff94a63adee2057aba261f4a2af85"><div class="ttname"><a href="display_8h.html#af6dff94a63adee2057aba261f4a2af85">zoom</a></div><div class="ttdeci">void zoom(int x, int y, double fator)</div><div class="ttdoc">Aplica zoom para os próximos desenhos de fator no ponto x, y.</div></div>
+<div class="ttc" id="adisplay_8h_html_ac224d83d0e3e0c49e9af596b43c18844"><div class="ttname"><a href="display_8h.html#ac224d83d0e3e0c49e9af596b43c18844">preenchimento</a></div><div class="ttdeci">void preenchimento(bool ativo)</div><div class="ttdoc">Determina se as próximas figuras devem ser preenchidas ou somente deve ser desenhado o contorno.</div></div>
+<div class="ttc" id="adisplay_8h_html_a538d2d61d2f76bb202ebb63d0a216591"><div class="ttname"><a href="display_8h.html#a538d2d61d2f76bb202ebb63d0a216591">reseta_zoom</a></div><div class="ttdeci">void reseta_zoom()</div><div class="ttdoc">Reinicia o zoom para o valor padrão.</div></div>
+<div class="ttc" id="adisplay_8h_html_aecffedf3afb245d14fe0a1efbd6756c8"><div class="ttname"><a href="display_8h.html#aecffedf3afb245d14fe0a1efbd6756c8">ponto</a></div><div class="ttdeci">int ponto[2]</div><div class="ttdoc">Um ponto no plano cartesiano. É um vetor de 2 inteiros {x, y}.</div><div class="ttdef"><b>Definition:</b> display.h:54</div></div>
+<div class="ttc" id="adisplay_8h_html_a4d231b2d1b94baa25c5b449e58b059e0"><div class="ttname"><a href="display_8h.html#a4d231b2d1b94baa25c5b449e58b059e0">rotacao</a></div><div class="ttdeci">void rotacao(int x, int y, double angulo)</div><div class="ttdoc">Rotaciona os próximos desenhos em um angulo específico em torno do ponto x, y.</div></div>
+<div class="ttc" id="adisplay_8h_html_a2b4c31f8db6e550745b7770627ab99e3"><div class="ttname"><a href="display_8h.html#a2b4c31f8db6e550745b7770627ab99e3">reseta_rotacao</a></div><div class="ttdeci">void reseta_rotacao()</div><div class="ttdoc">Reinicia a rotação para o valor padrão.</div></div>
 <div class="ttc" id="adisplay_8h_html_a14d933f581bc34cc5b78e3fb86c36bdd"><div class="ttname"><a href="display_8h.html#a14d933f581bc34cc5b78e3fb86c36bdd">desenha_retangulo</a></div><div class="ttdeci">void desenha_retangulo(int x, int y, int largura, int altura)</div><div class="ttdoc">Desenha um retângulo.</div></div>
+<div class="ttc" id="adisplay_8h_html_a74c66947ed2bc6422b41c4215c4714b5"><div class="ttname"><a href="display_8h.html#a74c66947ed2bc6422b41c4215c4714b5">desenha_poligono</a></div><div class="ttdeci">void desenha_poligono(ponto *pontos, int qtd_pontos)</div><div class="ttdoc">Desenha um polígono arbitrário.</div></div>
+<div class="ttc" id="adisplay_8h_html_abab6d93a27cbcdb99fb31b3cceb1651b"><div class="ttname"><a href="display_8h.html#abab6d93a27cbcdb99fb31b3cceb1651b">desenha_circulo</a></div><div class="ttdeci">void desenha_circulo(int x, int y, int raio)</div><div class="ttdoc">Desenha um círculo.</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

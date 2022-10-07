@@ -119,7 +119,8 @@ $(document).ready(function(){initNavTree('input_8h.html',''); initResizable(); }
 <div class="header">
   <div class="summary">
 <a href="#enum-members">Enumerações</a> &#124;
-<a href="#func-members">Funções</a>  </div>
+<a href="#func-members">Funções</a> &#124;
+<a href="#var-members">Variáveis</a>  </div>
   <div class="headertitle">
 <div class="title">Referência ao ficheiro input.h</div>  </div>
 </div><!--header-->
@@ -201,6 +202,20 @@ Funções</h2></td></tr>
 <tr class="memitem:a3a3792ef20d23b5ed1dced9a9e7fd332"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input_8h.html#a3a3792ef20d23b5ed1dced9a9e7fd332">botao_mouse_acabou_de_ser_solto</a> (int botao)</td></tr>
 <tr class="memdesc:a3a3792ef20d23b5ed1dced9a9e7fd332"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se o botão do mouse foi solto.  <a href="input_8h.html#a3a3792ef20d23b5ed1dced9a9e7fd332">Mais...</a><br /></td></tr>
 <tr class="separator:a3a3792ef20d23b5ed1dced9a9e7fd332"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variáveis</h2></td></tr>
+<tr class="memitem:ac7cac758e40d7b7e8b30782e469fe4f3"><td class="memItemLeft" align="right" valign="top"><a id="ac7cac758e40d7b7e8b30782e469fe4f3"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input_8h.html#ac7cac758e40d7b7e8b30782e469fe4f3">mouse_x</a></td></tr>
+<tr class="memdesc:ac7cac758e40d7b7e8b30782e469fe4f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Posição X do mouse. <br /></td></tr>
+<tr class="separator:ac7cac758e40d7b7e8b30782e469fe4f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a401a98f597320adbeb24d9fe6b99a8d6"><td class="memItemLeft" align="right" valign="top"><a id="a401a98f597320adbeb24d9fe6b99a8d6"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input_8h.html#a401a98f597320adbeb24d9fe6b99a8d6">mouse_y</a></td></tr>
+<tr class="memdesc:a401a98f597320adbeb24d9fe6b99a8d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Posição Y do mouse. <br /></td></tr>
+<tr class="separator:a401a98f597320adbeb24d9fe6b99a8d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3380380a065c333ad5f2eef83fa7ba9"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input_8h.html#ad3380380a065c333ad5f2eef83fa7ba9">roda_do_mouse</a></td></tr>
+<tr class="memdesc:ad3380380a065c333ad5f2eef83fa7ba9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quantidade que a roda do mouse foi girada no último passo de tempo.  <a href="input_8h.html#ad3380380a065c333ad5f2eef83fa7ba9">Mais...</a><br /></td></tr>
+<tr class="separator:ad3380380a065c333ad5f2eef83fa7ba9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentação dos valores da enumeração</h2>
 <a id="a688a3217fab4610eb4866d88ac7854a0"></a>
@@ -471,6 +486,24 @@ Funções</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Retorna</dt><dd>Retorna <code>true</code> se a tecla está sendo pressionada </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação das variáveis</h2>
+<a id="ad3380380a065c333ad5f2eef83fa7ba9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3380380a065c333ad5f2eef83fa7ba9">&#9670;&nbsp;</a></span>roda_do_mouse</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">roda_do_mouse</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Quantidade que a roda do mouse foi girada no último passo de tempo. </p>
+<p>Positivo significa rolagem para cima, enquanto negativo significa rolagem para baixo. Note que este valor é resetado a cada passo de tempo. </p>
 
 </div>
 </div>

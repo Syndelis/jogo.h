@@ -119,6 +119,7 @@ $(document).ready(function(){initNavTree('display_8h.html',''); initResizable();
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Definições de tipos</a> &#124;
 <a href="#enum-members">Enumerações</a> &#124;
 <a href="#func-members">Funções</a>  </div>
   <div class="headertitle">
@@ -136,6 +137,13 @@ Macros</h2></td></tr>
 <tr class="memdesc:a8389bb9dd31a2931bcbad45e441a9127"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a cor para os próximos desenhos de figuras geométricas, textos e imagens.  <a href="display_8h.html#a8389bb9dd31a2931bcbad45e441a9127">Mais...</a><br /></td></tr>
 <tr class="separator:a8389bb9dd31a2931bcbad45e441a9127"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Definições de tipos</h2></td></tr>
+<tr class="memitem:aecffedf3afb245d14fe0a1efbd6756c8"><td class="memItemLeft" align="right" valign="top"><a id="aecffedf3afb245d14fe0a1efbd6756c8"></a>
+typedef int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="display_8h.html#aecffedf3afb245d14fe0a1efbd6756c8">ponto</a>[2]</td></tr>
+<tr class="memdesc:aecffedf3afb245d14fe0a1efbd6756c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Um ponto no plano cartesiano. É um vetor de 2 inteiros {x, y}. <br /></td></tr>
+<tr class="separator:aecffedf3afb245d14fe0a1efbd6756c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerações</h2></td></tr>
 <tr class="memitem:af3dd3e00e094f0b1eadb849360426b5d"><td class="memItemLeft" align="right" valign="top"><a id="af3dd3e00e094f0b1eadb849360426b5d"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="display_8h.html#af3dd3e00e094f0b1eadb849360426b5d">Cores</a> </td></tr>
@@ -147,6 +155,27 @@ Funções</h2></td></tr>
 <tr class="memitem:a14d933f581bc34cc5b78e3fb86c36bdd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="display_8h.html#a14d933f581bc34cc5b78e3fb86c36bdd">desenha_retangulo</a> (int x, int y, int largura, int altura)</td></tr>
 <tr class="memdesc:a14d933f581bc34cc5b78e3fb86c36bdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desenha um retângulo.  <a href="display_8h.html#a14d933f581bc34cc5b78e3fb86c36bdd">Mais...</a><br /></td></tr>
 <tr class="separator:a14d933f581bc34cc5b78e3fb86c36bdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abab6d93a27cbcdb99fb31b3cceb1651b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="display_8h.html#abab6d93a27cbcdb99fb31b3cceb1651b">desenha_circulo</a> (int x, int y, int raio)</td></tr>
+<tr class="memdesc:abab6d93a27cbcdb99fb31b3cceb1651b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desenha um círculo.  <a href="display_8h.html#abab6d93a27cbcdb99fb31b3cceb1651b">Mais...</a><br /></td></tr>
+<tr class="separator:abab6d93a27cbcdb99fb31b3cceb1651b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac224d83d0e3e0c49e9af596b43c18844"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="display_8h.html#ac224d83d0e3e0c49e9af596b43c18844">preenchimento</a> (bool ativo)</td></tr>
+<tr class="memdesc:ac224d83d0e3e0c49e9af596b43c18844"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determina se as próximas figuras devem ser preenchidas ou somente deve ser desenhado o contorno.  <a href="display_8h.html#ac224d83d0e3e0c49e9af596b43c18844">Mais...</a><br /></td></tr>
+<tr class="separator:ac224d83d0e3e0c49e9af596b43c18844"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74c66947ed2bc6422b41c4215c4714b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="display_8h.html#a74c66947ed2bc6422b41c4215c4714b5">desenha_poligono</a> (<a class="el" href="display_8h.html#aecffedf3afb245d14fe0a1efbd6756c8">ponto</a> *pontos, int qtd_pontos)</td></tr>
+<tr class="memdesc:a74c66947ed2bc6422b41c4215c4714b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desenha um polígono arbitrário.  <a href="display_8h.html#a74c66947ed2bc6422b41c4215c4714b5">Mais...</a><br /></td></tr>
+<tr class="separator:a74c66947ed2bc6422b41c4215c4714b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d231b2d1b94baa25c5b449e58b059e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="display_8h.html#a4d231b2d1b94baa25c5b449e58b059e0">rotacao</a> (int x, int y, double angulo)</td></tr>
+<tr class="memdesc:a4d231b2d1b94baa25c5b449e58b059e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotaciona os próximos desenhos em um angulo específico em torno do ponto x, y.  <a href="display_8h.html#a4d231b2d1b94baa25c5b449e58b059e0">Mais...</a><br /></td></tr>
+<tr class="separator:a4d231b2d1b94baa25c5b449e58b059e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b4c31f8db6e550745b7770627ab99e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="display_8h.html#a2b4c31f8db6e550745b7770627ab99e3">reseta_rotacao</a> ()</td></tr>
+<tr class="memdesc:a2b4c31f8db6e550745b7770627ab99e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reinicia a rotação para o valor padrão.  <a href="display_8h.html#a2b4c31f8db6e550745b7770627ab99e3">Mais...</a><br /></td></tr>
+<tr class="separator:a2b4c31f8db6e550745b7770627ab99e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6dff94a63adee2057aba261f4a2af85"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="display_8h.html#af6dff94a63adee2057aba261f4a2af85">zoom</a> (int x, int y, double fator)</td></tr>
+<tr class="memdesc:af6dff94a63adee2057aba261f4a2af85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aplica zoom para os próximos desenhos de fator no ponto x, y.  <a href="display_8h.html#af6dff94a63adee2057aba261f4a2af85">Mais...</a><br /></td></tr>
+<tr class="separator:af6dff94a63adee2057aba261f4a2af85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a538d2d61d2f76bb202ebb63d0a216591"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="display_8h.html#a538d2d61d2f76bb202ebb63d0a216591">reseta_zoom</a> ()</td></tr>
+<tr class="memdesc:a538d2d61d2f76bb202ebb63d0a216591"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reinicia o zoom para o valor padrão.  <a href="display_8h.html#a538d2d61d2f76bb202ebb63d0a216591">Mais...</a><br /></td></tr>
+<tr class="separator:a538d2d61d2f76bb202ebb63d0a216591"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentação das macros</h2>
 <a id="a8389bb9dd31a2931bcbad45e441a9127"></a>
@@ -185,6 +214,88 @@ Funções</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Documentação das funções</h2>
+<a id="abab6d93a27cbcdb99fb31b3cceb1651b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abab6d93a27cbcdb99fb31b3cceb1651b">&#9670;&nbsp;</a></span>desenha_circulo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void desenha_circulo </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>raio</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Desenha um círculo. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x,y</td><td>Posição do círculo na tela. </td></tr>
+    <tr><td class="paramname">raio</td><td>Raio do círculo. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd><code>void</code> </dd></dl>
+
+</div>
+</div>
+<a id="a74c66947ed2bc6422b41c4215c4714b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74c66947ed2bc6422b41c4215c4714b5">&#9670;&nbsp;</a></span>desenha_poligono()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void desenha_poligono </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="display_8h.html#aecffedf3afb245d14fe0a1efbd6756c8">ponto</a> *&#160;</td>
+          <td class="paramname"><em>pontos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>qtd_pontos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Desenha um polígono arbitrário. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pontos</td><td>Vetor de <a class="el" href="display_8h.html#aecffedf3afb245d14fe0a1efbd6756c8">ponto</a>'s que formam o polígono. </td></tr>
+    <tr><td class="paramname">qtd_pontos</td><td>Número de pontos no vetor. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd><code>void</code> </dd></dl>
+
+</div>
+</div>
 <a id="a14d933f581bc34cc5b78e3fb86c36bdd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a14d933f581bc34cc5b78e3fb86c36bdd">&#9670;&nbsp;</a></span>desenha_retangulo()</h2>
 
@@ -234,6 +345,161 @@ Funções</h2></td></tr>
 <dl class="section return"><dt>Retorna</dt><dd><code>void</code> </dd></dl>
 <dl class="section examples"><dt>Exemplos</dt><dd><a class="el" href="cor-example.html#a3">cor</a>.</dd>
 </dl>
+
+</div>
+</div>
+<a id="ac224d83d0e3e0c49e9af596b43c18844"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac224d83d0e3e0c49e9af596b43c18844">&#9670;&nbsp;</a></span>preenchimento()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void preenchimento </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>ativo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Determina se as próximas figuras devem ser preenchidas ou somente deve ser desenhado o contorno. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ativo</td><td><code>true</code> para preenchimento, <code>false</code> para contorno. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd><code>void</code> </dd></dl>
+
+</div>
+</div>
+<a id="a2b4c31f8db6e550745b7770627ab99e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b4c31f8db6e550745b7770627ab99e3">&#9670;&nbsp;</a></span>reseta_rotacao()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void reseta_rotacao </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reinicia a rotação para o valor padrão. </p>
+<dl class="section return"><dt>Retorna</dt><dd><code>void</code> </dd></dl>
+
+</div>
+</div>
+<a id="a538d2d61d2f76bb202ebb63d0a216591"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a538d2d61d2f76bb202ebb63d0a216591">&#9670;&nbsp;</a></span>reseta_zoom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void reseta_zoom </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reinicia o zoom para o valor padrão. </p>
+<dl class="section return"><dt>Retorna</dt><dd><code>void</code> </dd></dl>
+
+</div>
+</div>
+<a id="a4d231b2d1b94baa25c5b449e58b059e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d231b2d1b94baa25c5b449e58b059e0">&#9670;&nbsp;</a></span>rotacao()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rotacao </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>angulo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Rotaciona os próximos desenhos em um angulo específico em torno do ponto x, y. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x,y</td><td>Âncora de rotação. </td></tr>
+    <tr><td class="paramname">angulo</td><td>Ângulo de rotação em radianos. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd><code>void</code> </dd></dl>
+
+</div>
+</div>
+<a id="af6dff94a63adee2057aba261f4a2af85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6dff94a63adee2057aba261f4a2af85">&#9670;&nbsp;</a></span>zoom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zoom </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>fator</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Aplica zoom para os próximos desenhos de fator no ponto x, y. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x,y</td><td>Âncora de zoom. </td></tr>
+    <tr><td class="paramname">fator</td><td>Fator de zoom a ser aplicado (1.0 = 100%, zoom normal). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd><code>void</code> </dd></dl>
 
 </div>
 </div>

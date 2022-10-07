@@ -44,5 +44,8 @@ var input_8h =
     [ "botao_mouse_pressionado", "input_8h.html#ae4654d67da6912c53e120ae6fee0de0f", null ],
     [ "tecla_acabou_de_ser_apertada", "input_8h.html#a66c87f4bb5d1d0dbd1d912dc51b35cdf", null ],
     [ "tecla_acabou_de_ser_solta", "input_8h.html#abf962c70916168f8071aa15b4052dcce", null ],
-    [ "tecla_pressionada", "input_8h.html#af74c11fa3552eaaec9dac8c70bb03d13", null ]
+    [ "tecla_pressionada", "input_8h.html#af74c11fa3552eaaec9dac8c70bb03d13", null ],
+    [ "mouse_x", "input_8h.html#ac7cac758e40d7b7e8b30782e469fe4f3", null ],
+    [ "mouse_y", "input_8h.html#a401a98f597320adbeb24d9fe6b99a8d6", null ],
+    [ "roda_do_mouse", "input_8h.html#ad3380380a065c333ad5f2eef83fa7ba9", null ]
 ];

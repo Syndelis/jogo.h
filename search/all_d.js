@@ -1,11 +1,8 @@
 var searchData=
 [
-  ['tab_56',['TAB',['../input_8h.html#a79d014352949143f5f4f4e714517ee61a920380215591395ea33ee5df8e293e19',1,'input.h']]],
-  ['tecla_5facabou_5fde_5fser_5fapertada_57',['tecla_acabou_de_ser_apertada',['../input_8h.html#a66c87f4bb5d1d0dbd1d912dc51b35cdf',1,'input.h']]],
-  ['tecla_5facabou_5fde_5fser_5fsolta_58',['tecla_acabou_de_ser_solta',['../input_8h.html#abf962c70916168f8071aa15b4052dcce',1,'input.h']]],
-  ['tecla_5fpressionada_59',['tecla_pressionada',['../input_8h.html#af74c11fa3552eaaec9dac8c70bb03d13',1,'input.h']]],
-  ['teclasespeciais_60',['TeclasEspeciais',['../input_8h.html#a79d014352949143f5f4f4e714517ee61',1,'input.h']]],
-  ['tela_5fcheia_61',['TELA_CHEIA',['../jogo_8h.html#a67bbf028b257929020ec9504a17a9867',1,'jogo.h']]],
-  ['toca_5fsom_62',['toca_som',['../audio_8h.html#a08c6e6c5e57a07e8b062708bd453645c',1,'audio.h']]],
-  ['toca_5fsom_5fem_5floop_63',['toca_som_em_loop',['../audio_8h.html#ae87110bb985d49825d4d28020c669466',1,'audio.h']]]
+  ['recomeca_5fsom_62',['recomeca_som',['../audio_8h.html#a329bbab835d94328a185087d1683c6d9',1,'audio.h']]],
+  ['reseta_5frotacao_63',['reseta_rotacao',['../display_8h.html#a2b4c31f8db6e550745b7770627ab99e3',1,'display.h']]],
+  ['reseta_5fzoom_64',['reseta_zoom',['../display_8h.html#a538d2d61d2f76bb202ebb63d0a216591',1,'display.h']]],
+  ['roda_5fdo_5fmouse_65',['roda_do_mouse',['../input_8h.html#ad3380380a065c333ad5f2eef83fa7ba9',1,'input.h']]],
+  ['rotacao_66',['rotacao',['../display_8h.html#a4d231b2d1b94baa25c5b449e58b059e0',1,'display.h']]]
 ];
