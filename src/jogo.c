@@ -6,7 +6,10 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <stdarg.h>
+
+#define GLEW_STATIC
 #include <GL/glew.h>
+
 #include <GLFW/glfw3.h>
 #include <GL/gl.h>
 #include "../include/jogo.h"

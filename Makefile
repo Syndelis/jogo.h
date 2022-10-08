@@ -6,6 +6,7 @@ ifeq ($(OS),Windows_NT)
 	REALPATH=Resolve-Path
 
 	LINKS=-lopengl32 -lm -lgdi32
+	GLEW_LIB_NAME=libglew32.a
 else
 	MKDIR=mkdir -p
 	CMAKE=cmake
@@ -14,6 +15,7 @@ else
 	REALPATH=realpath
 
 	LINKS=-lGL -lm -ldl -pthread
+	GLEW_LIB_NAME=libGLEW.a
 endif
 
 CC=gcc -std=c17
@@ -26,7 +28,7 @@ GLFW_LIB=$(GLFW_BUILD_DIR)/src/libglfw3.a
 
 GLEW_SRC=lib/glew
 GLEW_BUILD_DIR=$(GLEW_SRC)/build/
-GLEW_LIB=$(GLEW_BUILD_DIR)/lib/libGLEW.a
+GLEW_LIB=$(GLEW_BUILD_DIR)/lib/$(GLEW_LIB_NAME)
 
 MINIAUDIO_SRC=lib/miniaudio
 
@@ -75,7 +77,7 @@ clean:
 	$(RMRF) $(OBJ_DIR) $(LIB) $(LIB_PART)
 
 includes:
-	$(eval LOCAL_INCLUDE_DIRS := . $(GLFW_SRC))
+	$(eval LOCAL_INCLUDE_DIRS := . $(GLFW_SRC) $(GLEW_SRC))
 	$(eval JOGO_ABSOLUTE_PATH := $(dir $(abspath $(lastword $(MAKEFILE_LIST)))))
 	$(eval INCLUDES := $(foreach dir,$(LOCAL_INCLUDE_DIRS),-I$(JOGO_ABSOLUTE_PATH)/$(dir)/include))
 	@echo $(INCLUDES)
