@@ -84,14 +84,13 @@ A biblioteca possui dependência dos seguintes pacotes:
 - Algum compilador de C (gcc, clang);
 - Comando utilitário `make`;
 - Comando utilitário `cmake`;
-- *GL Extension Wrangler* **GLEW**;
 - Pacotes de desenvolvimento equivalentes do seu servidor gráfico (X11 ou Wayland);
 
 Portanto, para instalar as dependências, basta rodas os comandos abaixo. Note que o **`$`** antes de cada linha simboliza apenas um comando, e não deve ser copiado.
 
 ### Distribuições baseadas em Debian (Ubuntu/Pop_OS!/ElementaryOS):
 ```sh
-$ sudo apt install build-essential cmake libglew-dev
+$ sudo apt install build-essential cmake
 $ case $XDG_SESSION_TYPE in
     x11) sudo apt install xorg-dev ;;
     wayland) sudo apt install libwayland-dev libxkbcommon-dev wayland-protocols extra-cmake-modules;;
@@ -101,7 +100,6 @@ esac
 
 ### Distribuições baseadas em ArchLinux:
 ```sh
-$ sudo pacman -S glew
 $ case $XDG_SESSION_TYPE in
     x11) sudo pacman -S libx11 ;;
     wayland) sudo pacman -S wayland ;;

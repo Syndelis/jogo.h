@@ -5,7 +5,7 @@ ifeq ($(OS),Windows_NT)
 	DIRNAME=Split-Path
 	REALPATH=Resolve-Path
 
-	LINKS=-lopengl32 -lglew32 -lm -lgdi32
+	LINKS=-lopengl32 -lm -lgdi32
 else
 	MKDIR=mkdir -p
 	CMAKE=cmake
@@ -13,7 +13,7 @@ else
 	DIRNAME=dirname
 	REALPATH=realpath
 
-	LINKS=-lGL -lGLEW -lm -ldl -pthread
+	LINKS=-lGL -lm -ldl -pthread
 endif
 
 CC=gcc -std=c17
@@ -24,9 +24,13 @@ GLFW_SRC=lib/glfw
 GLFW_BUILD_DIR=$(GLFW_SRC)/build
 GLFW_LIB=$(GLFW_BUILD_DIR)/src/libglfw3.a
 
+GLEW_SRC=lib/glew
+GLEW_BUILD_DIR=$(GLEW_SRC)/build/cmake
+GLEW_LIB=$(GLEW_BUILD_DIR)/lib/libGLEW.a
+
 MINIAUDIO_SRC=lib/miniaudio
 
-INCLUDE_DIRS=-I. -I$(GLFW_SRC)/include -Ilib/ -I$(MINIAUDIO_SRC)
+INCLUDE_DIRS=-I. -I$(GLFW_SRC)/include -I$(GLEW_SRC)/include -Ilib/ -I$(MINIAUDIO_SRC)
 LINK_DIRS=
 DEFINE=
 
@@ -41,12 +45,16 @@ LIB_PART=libjogo-part.a
 .PHONY: includes links docs
 VPATH=$(wildcard $(SRC_DIR)/*) $(dir GLFW_LIB)
 
-all: $(GLFW_LIB) $(OBJ_DIR) $(LIB)
+all: $(GLFW_LIB) $(GLEW_LIB) $(OBJ_DIR) $(LIB)
 
 $(GLFW_LIB):
 	$(MKDIR) "$(GLFW_BUILD_DIR)"
 	$(CMAKE) -S $(GLFW_SRC) -B $(GLFW_BUILD_DIR)
 	$(MAKE) -C $(GLFW_BUILD_DIR)
+
+$(GLEW_LIB):
+	$(CMAKE) $(GLEW_BUILD_DIR)
+	$(MAKE) -C $(GLEW_BUILD_DIR) glew_s
 
 $(OBJ_DIR):
 	$(MKDIR) "$@"
@@ -54,14 +62,14 @@ $(OBJ_DIR):
 $(LIB_PART): $(OBJ)
 	ar rcs $@ $^
 
-$(LIB): $(LIB_PART) $(GLFW_LIB)
+$(LIB): $(LIB_PART) $(GLFW_LIB) $(GLEW_LIB)
 	ar -rcT $@ $^
 
 $(OBJ): $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) $(CFLAGS_LIB) $< -o $@ $(INCLUDE_DIRS) $(DEFINE)
 
 full-clean: clean
-	$(RMRF) $(GLFW_BUILD_DIR)
+	$(RMRF) $(GLFW_BUILD_DIR) $(GLEW_LIB)
 
 clean:
 	$(RMRF) $(OBJ_DIR) $(LIB) $(LIB_PART)

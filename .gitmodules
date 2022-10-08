@@ -13,3 +13,6 @@
 [submodule "utils"]
 	path = utils
 	url = https://github.com/syndelis/windows-makefile-utils
+[submodule "lib/glew"]
+	path = lib/glew
+	url = https://github.com/syndelis/glew
