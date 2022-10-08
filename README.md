@@ -132,7 +132,18 @@ deve ficar parecido com o abaixo:
 ┊
 ```
 
-Após isso, rode o seguinte comando no seu PowerShell
+Você também precisará do comando **CMake** que pode ser instalado de duas
+formas:
+
+1. Para Windows 10 e 11, rode o seguinte no seu PowerShell:
+
+    ```pwsh
+    PS> winget install Kitware.CMake
+    ```
+
+2. Windows mais antigos: baixe o instalador [aqui](https://github.com/Kitware/CMake/releases/download/v3.24.2/cmake-3.24.2-windows-x86_64.msi)
+
+Após isso, rode este comando no seu PowerShell
 
 ```pwsh
 PS> git submodule update --init --recursive # Só precisa rodar uma vez
