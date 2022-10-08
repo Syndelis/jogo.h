@@ -184,7 +184,8 @@ Instalando as Dependências &lt;a href="#jogoh---biblioteca-de-alto-nível-para-
 <p>Portanto, para instalar as dependências, basta rodas os comandos abaixo. Note que o **<code>$</code>** antes de cada linha simboliza apenas um comando, e não deve ser copiado.</p>
 <h2><a class="anchor" id="autotoc_md7"></a>
 Distribuições baseadas em Debian (Ubuntu/Pop_OS!/ElementaryOS):</h2>
-<div class="fragment"><div class="line">$ sudo apt install build-essential cmake</div>
+<div class="fragment"><div class="line">$ git submodule update --init --recursive</div>
+<div class="line">$ sudo apt install build-essential cmake</div>
 <div class="line">$ case $XDG_SESSION_TYPE in</div>
 <div class="line">    x11) sudo apt install xorg-dev ;;</div>
 <div class="line">    wayland) sudo apt install libwayland-dev libxkbcommon-dev wayland-protocols extra-cmake-modules;;</div>
@@ -192,15 +193,41 @@ Distribuições baseadas em Debian (Ubuntu/Pop_OS!/ElementaryOS):</h2>
 <div class="line">esac</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md8"></a>
 Distribuições baseadas em ArchLinux:</h2>
-<div class="fragment"><div class="line">$ case $XDG_SESSION_TYPE in</div>
+<div class="fragment"><div class="line">$ git submodule update --init --recursive</div>
+<div class="line">$ case $XDG_SESSION_TYPE in</div>
 <div class="line">    x11) sudo pacman -S libx11 ;;</div>
 <div class="line">    wayland) sudo pacman -S wayland ;;</div>
 <div class="line">    *) echo &quot;Não foi possível determinar o tipo de sessão que está sendo usada&quot; ;;</div>
 <div class="line">esac</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md9"></a>
 Windows</h2>
-<p>Compilar diretamente no Windows ainda está em fase de testes. No momento, recomenda-se que o programador instale o <a href="https://aka.ms/wsl">WSL 2</a> e compile e execute o programa pelo terminal de Linux da distribuição escolhida.</p>
-<h1><a class="anchor" id="autotoc_md10"></a>
+<p>Para compilar nativamente no Windows, você vai precisar instalar o <b>MinGW64</b>, que traz as ferramentas GNU de compilação para o Windows. Para isso, baixe <a href="https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/7.3.0/threads-win32/seh/x86_64-7.3.0-release-win32-seh-rt_v5-rev0.7z/download">este arquivo</a> e descompacte-o no seu diretório **<code>C:\</code>**. Quando extraído, seu disco **<code>C:\</code>** deve ficar parecido com o abaixo:</p>
+<div class="fragment"><div class="line">🖴 C:\</div>
+<div class="line">├── 📁 ProgramData\</div>
+<div class="line">┊   └── ...</div>
+<div class="line">├── 📁 Program Files\ &lt;--- Em Português, &quot;Arquivos de Programas&quot;</div>
+<div class="line">┊   └── ...</div>
+<div class="line">├── 📁 Program Files (x86)\ &lt;--- &quot;Arquivos de Programas (x86)&quot;</div>
+<div class="line">┊   └── ...</div>
+<div class="line">├── 📁 Users\</div>
+<div class="line">┊   └── ...</div>
+<div class="line">├── 📁 mingw64\ &lt;--- Nova pasta que você extraíu!!</div>
+<div class="line">┊   └── ...</div>
+<div class="line">├── ... Outras pastas ...</div>
+<div class="line">┊</div>
+</div><!-- fragment --><p>Você também precisará do comando <b>CMake</b> que pode ser instalado de duas formas:</p>
+<ol type="1">
+<li><p class="startli">Para Windows 10 e 11, rode o seguinte no seu PowerShell:</p>
+<p class="startli">```pwsh PS&gt; winget install Kitware.CMake ```</p>
+</li>
+<li>Windows mais antigos: baixe o instalador <a href="https://github.com/Kitware/CMake/releases/download/v3.24.2/cmake-3.24.2-windows-x86_64.msi">aqui</a></li>
+</ol>
+<p>Após isso, rode este comando no seu PowerShell</p>
+<div class="fragment"><div class="line">PS&gt; git submodule update --init --recursive # Só precisa rodar uma vez</div>
+<div class="line">PS&gt; .\utils\windows-build.ps1 # Rode sempre que quiser compilar</div>
+</div><!-- fragment --><p>E a biblioteca estará compilada. Para apagar os arquivos compilados, rode:</p>
+<div class="fragment"><div class="line">PS&gt; .\utils\windows-clean.ps1</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md10"></a>
 Documentação &lt;a href="#jogoh---biblioteca-de-alto-nível-para-desenvolvimento-de-jogos-em-c"&gt;▲&lt;/a&gt;</h1>
 <p>A documentação está disponível neste link: <b>[docs]</b>.</p>
 <p>Ela foi feita usando <a href="https://doxygen.nl">Doxygen</a> com o tema <a href="https://jothepro.github.io/doxygen-awesome-css/index.html">Doxygen Awesome CSS</a>. Para <em>buildar</em> a documentação, instale <code>doxygen</code> e execute</p>
