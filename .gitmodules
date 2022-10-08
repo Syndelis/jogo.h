@@ -10,3 +10,6 @@
 [submodule "docs/doxygen-awesome-css"]
 	path = docs/doxygen-awesome-css
 	url = https://github.com/syndelis/doxygen-awesome-css/
+[submodule "utils"]
+	path = utils
+	url = https://github.com/syndelis/windows-makefile-utils

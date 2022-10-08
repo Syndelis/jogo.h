@@ -18,7 +18,7 @@
 GLFWwindow *window = NULL;
 int largura_janela = 0, altura_janela = 0;
 
-#define BASE_GLEW_ERROR ERROR " Não foi possível inicializar o GLEW:\n"
+#define BASE_GLEW_ERROR JOGO_ERROR " Não foi possível inicializar o GLEW:\n"
 
 /* -----------------------------------------------------------------------------
     FORWARD DECLARATIONS
@@ -35,7 +35,7 @@ void _abre_janela(int n, ...) {
     if (n > 2) {
         fprintf(
             stderr,
-            ERROR "abre_janela() recebe 1 ou 2 parâmetros. "
+            JOGO_ERROR "abre_janela() recebe 1 ou 2 parâmetros. "
             "%d foram passados!\n"
             "Exemplos de chamadas corretas para essa função:\n"
             "\tabre_janela(TELA_CHEIA); Abre o jogo em tela cheia\n"

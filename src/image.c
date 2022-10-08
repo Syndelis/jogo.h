@@ -155,7 +155,7 @@ DISPLAY_FUNC(desenha_texto, char *texto) {
     if (active_font_index < 0) {
         fprintf(
             stderr,
-            ERROR "Nenhuma fonte foi definida com a função "
+            JOGO_ERROR "Nenhuma fonte foi definida com a função "
             "`\033[32mfonte()\033[m` antes da chamada "
             "`\033[32mdesenha_texto()\033[m`\n"
         );
@@ -448,7 +448,7 @@ unsigned char *_read_gif_into_data(
     if (!(gif_file = stbi__fopen(in_filename, "rb"))) {
         fprintf(
             stderr,
-            ERROR "Não foi possível abrir o arquivo \"%s\".\n",
+            JOGO_ERROR "Não foi possível abrir o arquivo \"%s\".\n",
             in_filename
         );
         exit(EXIT_FAILURE);

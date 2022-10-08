@@ -182,7 +182,7 @@ void _initialize_sound_system() {
     if (result != MA_SUCCESS) {
         fprintf(
             stderr,
-            ERROR "Não foi possível inicializar o sistema de "
+            JOGO_ERROR "Não foi possível inicializar o sistema de "
             "áudio.\n"
         );
         exit(EXIT_FAILURE);
@@ -245,7 +245,7 @@ Sound *_insert_sound(char *filename) {
     if (result != MA_SUCCESS) {
         fprintf(
             stderr,
-            WARN "Não foi possível carregar o arquivo de áudio `%s`\n",
+            JOGO_WARN "Não foi possível carregar o arquivo de áudio `%s`\n",
             filename
         );
 
