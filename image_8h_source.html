@@ -137,20 +137,23 @@ $(document).ready(function(){initNavTree('image_8h_source.html',''); initResizab
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;DISPLAY_FUNC(<a class="code" href="image_8h.html#a238b34044bd63db766ba09a2fefc2b74">desenha_imagem</a>, <span class="keywordtype">char</span> *arquivo);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordtype">void</span> <a class="code" href="image_8h.html#a6ae199bb4f7d7dc5c0ae4f7752c33dca">fonte</a>(<span class="keywordtype">char</span> *arquivo, <span class="keywordtype">float</span> tamanho);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;DISPLAY_FUNC(<a class="code" href="image_8h.html#aa6c1a39f82aa1bd46dac21aac356ff64">desenha_texto</a>, <span class="keywordtype">char</span> *texto);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">/* -----------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">    PRIVATE FUNCTIONS</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">----------------------------------------------------------------------------- */</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keywordtype">void</span> _free_sprite_hashmap();</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keywordtype">void</span> _free_font_hashmap();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;DISPLAY_FUNC(<a class="code" href="image_8h.html#ac6a217be07de2b4c3c5d18c7f2c3b234">desenha_texto</a>, <span class="keywordtype">char</span> *texto, ...);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">/* -----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">    PRIVATE FUNCTIONS</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">----------------------------------------------------------------------------- */</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keywordtype">void</span> _free_sprite_hashmap();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keywordtype">void</span> _free_font_hashmap();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keywordtype">void</span> _initialize_text_system();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keywordtype">void</span> _terminate_text_system();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aimage_8h_html_a238b34044bd63db766ba09a2fefc2b74"><div class="ttname"><a href="image_8h.html#a238b34044bd63db766ba09a2fefc2b74">desenha_imagem</a></div><div class="ttdeci">void desenha_imagem(int x, int y, char *arquivo)</div><div class="ttdoc">Desenha uma imagem na tela.</div></div>
 <div class="ttc" id="aimage_8h_html_a6ae199bb4f7d7dc5c0ae4f7752c33dca"><div class="ttname"><a href="image_8h.html#a6ae199bb4f7d7dc5c0ae4f7752c33dca">fonte</a></div><div class="ttdeci">void fonte(char *arquivo, float tamanho)</div><div class="ttdoc">Escolhe uma fonte para ser usada para as subsequentes chamadas de desenha_texto().</div></div>
-<div class="ttc" id="aimage_8h_html_aa6c1a39f82aa1bd46dac21aac356ff64"><div class="ttname"><a href="image_8h.html#aa6c1a39f82aa1bd46dac21aac356ff64">desenha_texto</a></div><div class="ttdeci">void desenha_texto(int x, int y, char *texto)</div><div class="ttdoc">Desenha um texto na tela usando a última fonte carregada.</div></div>
+<div class="ttc" id="aimage_8h_html_ac6a217be07de2b4c3c5d18c7f2c3b234"><div class="ttname"><a href="image_8h.html#ac6a217be07de2b4c3c5d18c7f2c3b234">desenha_texto</a></div><div class="ttdeci">void desenha_texto(int x, int y, char *texto,...)</div><div class="ttdoc">Desenha um texto na tela usando a última fonte carregada.</div></div>
 <div class="ttc" id="adisplay_8h_html"><div class="ttname"><a href="display_8h.html">display.h</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

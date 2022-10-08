@@ -133,11 +133,11 @@ Funções</h2></td></tr>
 <tr class="memdesc:a238b34044bd63db766ba09a2fefc2b74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desenha uma imagem na tela.  <a href="image_8h.html#a238b34044bd63db766ba09a2fefc2b74">Mais...</a><br /></td></tr>
 <tr class="separator:a238b34044bd63db766ba09a2fefc2b74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ae199bb4f7d7dc5c0ae4f7752c33dca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="image_8h.html#a6ae199bb4f7d7dc5c0ae4f7752c33dca">fonte</a> (char *arquivo, float tamanho)</td></tr>
-<tr class="memdesc:a6ae199bb4f7d7dc5c0ae4f7752c33dca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Escolhe uma fonte para ser usada para as subsequentes chamadas de <a class="el" href="image_8h.html#aa6c1a39f82aa1bd46dac21aac356ff64">desenha_texto()</a>.  <a href="image_8h.html#a6ae199bb4f7d7dc5c0ae4f7752c33dca">Mais...</a><br /></td></tr>
+<tr class="memdesc:a6ae199bb4f7d7dc5c0ae4f7752c33dca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Escolhe uma fonte para ser usada para as subsequentes chamadas de <a class="el" href="image_8h.html#ac6a217be07de2b4c3c5d18c7f2c3b234">desenha_texto()</a>.  <a href="image_8h.html#a6ae199bb4f7d7dc5c0ae4f7752c33dca">Mais...</a><br /></td></tr>
 <tr class="separator:a6ae199bb4f7d7dc5c0ae4f7752c33dca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6c1a39f82aa1bd46dac21aac356ff64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="image_8h.html#aa6c1a39f82aa1bd46dac21aac356ff64">desenha_texto</a> (int x, int y, char *texto)</td></tr>
-<tr class="memdesc:aa6c1a39f82aa1bd46dac21aac356ff64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desenha um texto na tela usando a última fonte carregada.  <a href="image_8h.html#aa6c1a39f82aa1bd46dac21aac356ff64">Mais...</a><br /></td></tr>
-<tr class="separator:aa6c1a39f82aa1bd46dac21aac356ff64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6a217be07de2b4c3c5d18c7f2c3b234"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="image_8h.html#ac6a217be07de2b4c3c5d18c7f2c3b234">desenha_texto</a> (int x, int y, char *texto,...)</td></tr>
+<tr class="memdesc:ac6a217be07de2b4c3c5d18c7f2c3b234"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desenha um texto na tela usando a última fonte carregada.  <a href="image_8h.html#ac6a217be07de2b4c3c5d18c7f2c3b234">Mais...</a><br /></td></tr>
+<tr class="separator:ac6a217be07de2b4c3c5d18c7f2c3b234"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentação das funções</h2>
 <a id="a238b34044bd63db766ba09a2fefc2b74"></a>
@@ -186,8 +186,8 @@ Funções</h2></td></tr>
 
 </div>
 </div>
-<a id="aa6c1a39f82aa1bd46dac21aac356ff64"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa6c1a39f82aa1bd46dac21aac356ff64">&#9670;&nbsp;</a></span>desenha_texto()</h2>
+<a id="ac6a217be07de2b4c3c5d18c7f2c3b234"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6a217be07de2b4c3c5d18c7f2c3b234">&#9670;&nbsp;</a></span>desenha_texto()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -208,7 +208,13 @@ Funções</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>texto</em>&#160;</td>
+          <td class="paramname"><em>texto</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -221,8 +227,9 @@ Funções</h2></td></tr>
 <p>Desenha um texto na tela usando a última fonte carregada. </p>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x,y</td><td>Posição do texto na tela. </td></tr>
-    <tr><td class="paramname">texto</td><td>Texto a ser desenhado. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">x,y</td><td>Posição do texto na tela. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">texto</td><td>Texto a ser desenhado. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">...</td><td>Argumentos opcionais para formatação do texto. </td></tr>
   </table>
   </dd>
 </dl>
@@ -258,7 +265,7 @@ Funções</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Escolhe uma fonte para ser usada para as subsequentes chamadas de <a class="el" href="image_8h.html#aa6c1a39f82aa1bd46dac21aac356ff64">desenha_texto()</a>. </p>
+<p>Escolhe uma fonte para ser usada para as subsequentes chamadas de <a class="el" href="image_8h.html#ac6a217be07de2b4c3c5d18c7f2c3b234">desenha_texto()</a>. </p>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">arquivo</td><td>Nome do arquivo da fonte. </td></tr>
