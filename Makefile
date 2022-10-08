@@ -25,7 +25,7 @@ GLFW_BUILD_DIR=$(GLFW_SRC)/build
 GLFW_LIB=$(GLFW_BUILD_DIR)/src/libglfw3.a
 
 GLEW_SRC=lib/glew
-GLEW_BUILD_DIR=$(GLEW_SRC)/build/cmake
+GLEW_BUILD_DIR=$(GLEW_SRC)/build/
 GLEW_LIB=$(GLEW_BUILD_DIR)/lib/libGLEW.a
 
 MINIAUDIO_SRC=lib/miniaudio
@@ -53,7 +53,7 @@ $(GLFW_LIB):
 	$(MAKE) -C $(GLFW_BUILD_DIR)
 
 $(GLEW_LIB):
-	$(CMAKE) $(GLEW_BUILD_DIR)
+	$(CMAKE) -S $(GLEW_BUILD_DIR)/cmake -B $(GLEW_BUILD_DIR)
 	$(MAKE) -C $(GLEW_BUILD_DIR) glew_s
 
 $(OBJ_DIR):
