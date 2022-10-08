@@ -149,8 +149,9 @@ void _abre_janela(int n, ...) {
 
     }
 
-    // Sound Setup ---------------------
+    // Additional Setups ---------------
 
+    _initialize_text_system();
     _initialize_sound_system();
 
 }
@@ -165,6 +166,7 @@ void fecha_janela() {
     _free_sprite_hashmap();
     _free_font_hashmap();
 
+    _terminate_text_system();
     _terminate_sound_system();
 
 }

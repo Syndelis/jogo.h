@@ -50,9 +50,10 @@ void fonte(char *arquivo, float tamanho);
  * @brief Desenha um texto na tela usando a última fonte carregada.
  * @param x,y       Posição do texto na tela.
  * @param texto     Texto a ser desenhado.
+ * @param[in] ...   Argumentos opcionais para formatação do texto.
  * @returns @c void
  */
-DISPLAY_FUNC(desenha_texto, char *texto);
+DISPLAY_FUNC(desenha_texto, char *texto, ...);
 /*!
  * @example desenha_texto
  * @code
@@ -77,5 +78,8 @@ DISPLAY_FUNC(desenha_texto, char *texto);
 
 void _free_sprite_hashmap();
 void _free_font_hashmap();
+
+void _initialize_text_system();
+void _terminate_text_system();
 
 #endif

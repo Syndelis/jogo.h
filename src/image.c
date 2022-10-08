@@ -2,6 +2,8 @@
     INCLUDES & GLOBALS
 ----------------------------------------------------------------------------- */
 
+#include <stdlib.h>
+#include <stdarg.h>
 #include <stdbool.h>
 #include <string.h>
 
@@ -32,6 +34,11 @@
 #define ASCII_CHR_COUNT (ASCII_CHR_END - ASCII_CHR_START + 1)
 #define GIF_LAYERS 4
 #define SECONDS_TO_MSECONDS 1000
+
+#define TEXT_BUFFER_ADVANTAGE 256
+
+int _text_buffer_size = 0; // Allocated at startup
+char *_text_buffer = NULL;
 
 /* -----------------------------------------------------------------------------
     PRIVATE STRUCTURES
@@ -153,7 +160,7 @@ void fonte(char *arquivo, float tamanho) {
 
 // -----------------------------------------------------------------------------
 
-DISPLAY_FUNC(desenha_texto, char *texto) {
+DISPLAY_FUNC(desenha_texto, char *texto, ...) {
 
     if (active_font_index < 0) {
         fprintf(
@@ -166,15 +173,27 @@ DISPLAY_FUNC(desenha_texto, char *texto) {
         exit(EXIT_FAILURE);
     }
 
+    if (strlen(texto) > _text_buffer_size) {
+        _text_buffer_size = strlen(texto) + TEXT_BUFFER_ADVANTAGE;
+        _text_buffer = realloc(_text_buffer, _text_buffer_size);
+    }
+
+    va_list args;
+    va_start(args, texto);
+
+    stbsp_vsprintf(_text_buffer, texto, args);
+
+    va_end(args);
+
     FontData font_data = font_hashmap[active_font_index].value;
 
     glBindTexture(GL_TEXTURE_2D, font_data.texture_id);
     glBegin(GL_QUADS);
 
     float fx = x, fy = y;
-    char current_char;
+    char current_char, *stream = _text_buffer;
 
-    while ((current_char = *texto)) {
+    while ((current_char = *stream)) {
         if (current_char >= ASCII_CHR_START && current_char < ASCII_CHR_END) {
             stbtt_aligned_quad q;
     
@@ -190,7 +209,7 @@ DISPLAY_FUNC(desenha_texto, char *texto) {
             glTexCoord2f(q.s0,q.t1); glVertex2f(q.x0,q.y1);
 
         }
-        ++texto;
+        ++stream;
     }
 
     glEnd();
@@ -433,6 +452,8 @@ ptrdiff_t _insert_font(char *filename, float point_size, char *font_hash_name) {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     fclose(font_file);
 
+    glBindTexture(GL_TEXTURE_2D, 0);
+
     shput(font_hashmap, font_hash_name, font_data);
     return shgeti(font_hashmap, font_hash_name);
 
@@ -472,4 +493,17 @@ unsigned char *_read_gif_into_data(
     fclose(gif_file);
     return gif_data;
 
+}
+
+// -----------------------------------------------------------------------------
+
+void _initialize_text_system() {
+    _text_buffer_size = TEXT_BUFFER_ADVANTAGE;
+    _text_buffer = (char *) malloc(_text_buffer_size * sizeof(char));
+}
+
+// -----------------------------------------------------------------------------
+
+void _terminate_text_system() {
+    free(_text_buffer);
 }
