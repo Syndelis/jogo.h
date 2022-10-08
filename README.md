@@ -90,6 +90,7 @@ Portanto, para instalar as dependências, basta rodas os comandos abaixo. Note q
 
 ### Distribuições baseadas em Debian (Ubuntu/Pop_OS!/ElementaryOS):
 ```sh
+$ git submodule update --init --recursive
 $ sudo apt install build-essential cmake
 $ case $XDG_SESSION_TYPE in
     x11) sudo apt install xorg-dev ;;
@@ -100,6 +101,7 @@ esac
 
 ### Distribuições baseadas em ArchLinux:
 ```sh
+$ git submodule update --init --recursive
 $ case $XDG_SESSION_TYPE in
     x11) sudo pacman -S libx11 ;;
     wayland) sudo pacman -S wayland ;;
@@ -109,7 +111,39 @@ esac
 
 ### Windows
 
-Compilar diretamente no Windows ainda está em fase de testes. No momento, recomenda-se que o programador instale o [WSL 2](https://aka.ms/wsl) e compile e execute o programa pelo terminal de Linux da distribuição escolhida.
+Para compilar nativamente no Windows, você vai precisar instalar o **MinGW64**, que traz as ferramentas GNU de compilação para o Windows.
+Para isso, baixe [este arquivo](https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/7.3.0/threads-win32/seh/x86_64-7.3.0-release-win32-seh-rt_v5-rev0.7z/download) e
+descompacte-o no seu diretório **`C:\`**. Quando extraído, seu disco **`C:\`**
+deve ficar parecido com o abaixo:
+
+```
+🖴 C:\
+├── 📁 ProgramData\
+┊   └── ...
+├── 📁 Program Files\ <--- Em Português, "Arquivos de Programas"
+┊   └── ...
+├── 📁 Program Files (x86)\ <--- "Arquivos de Programas (x86)"
+┊   └── ...
+├── 📁 Users\
+┊   └── ...
+├── 📁 mingw64\ <--- Nova pasta que você extraíu!!
+┊   └── ...
+├── ... Outras pastas ...
+┊
+```
+
+Após isso, rode o seguinte comando no seu PowerShell
+
+```pwsh
+PS> git submodule update --init --recursive # Só precisa rodar uma vez
+PS> .\utils\windows-build.ps1 # Rode sempre que quiser compilar
+```
+
+E a biblioteca estará compilada. Para apagar os arquivos compilados, rode:
+
+```pwsh
+PS> .\utils\windows-clean.ps1
+```
 
 ## Documentação [▲]
 
