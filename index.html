@@ -179,13 +179,12 @@ Instalando as Dependências &lt;a href="#jogoh---biblioteca-de-alto-nível-para-
 <li>Algum compilador de C (gcc, clang);</li>
 <li>Comando utilitário <code>make</code>;</li>
 <li>Comando utilitário <code>cmake</code>;</li>
-<li><em>GL Extension Wrangler</em> <b>GLEW</b>;</li>
 <li>Pacotes de desenvolvimento equivalentes do seu servidor gráfico (X11 ou Wayland);</li>
 </ul>
 <p>Portanto, para instalar as dependências, basta rodas os comandos abaixo. Note que o **<code>$</code>** antes de cada linha simboliza apenas um comando, e não deve ser copiado.</p>
 <h2><a class="anchor" id="autotoc_md7"></a>
 Distribuições baseadas em Debian (Ubuntu/Pop_OS!/ElementaryOS):</h2>
-<div class="fragment"><div class="line">$ sudo apt install build-essential cmake libglew-dev</div>
+<div class="fragment"><div class="line">$ sudo apt install build-essential cmake</div>
 <div class="line">$ case $XDG_SESSION_TYPE in</div>
 <div class="line">    x11) sudo apt install xorg-dev ;;</div>
 <div class="line">    wayland) sudo apt install libwayland-dev libxkbcommon-dev wayland-protocols extra-cmake-modules;;</div>
@@ -193,8 +192,7 @@ Distribuições baseadas em Debian (Ubuntu/Pop_OS!/ElementaryOS):</h2>
 <div class="line">esac</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md8"></a>
 Distribuições baseadas em ArchLinux:</h2>
-<div class="fragment"><div class="line">$ sudo pacman -S glew</div>
-<div class="line">$ case $XDG_SESSION_TYPE in</div>
+<div class="fragment"><div class="line">$ case $XDG_SESSION_TYPE in</div>
 <div class="line">    x11) sudo pacman -S libx11 ;;</div>
 <div class="line">    wayland) sudo pacman -S wayland ;;</div>
 <div class="line">    *) echo &quot;Não foi possível determinar o tipo de sessão que está sendo usada&quot; ;;</div>
