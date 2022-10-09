@@ -19,7 +19,7 @@ else
 endif
 
 CC=gcc -std=c17
-CFLAGS=-g
+CFLAGS=-g -DGLEW_NO_GLU
 CFLAGS_LIB=-c
 
 GLFW_SRC=lib/glfw
