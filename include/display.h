@@ -16,35 +16,35 @@
  * @brief Cores que podem ser usadas na função @ref cor()
  */
 enum Cores {
-    VERMELHO        = 0xFF0000,
-    VERDE           = 0x00FF00,
-    AZUL            = 0x0000FF,
-    AMARELO         = 0xFFFF00,
-    MANGETA         = 0xFF00FF,
-    CIANO           = 0x00FFFF,
-    BRANCO          = 0xFFFFFF,
-    PRETO           = 0x000000,
-    CINZA           = 0x808080,
-    LARANJA         = 0xFFA500,
-    ROSA            = 0xFFC0CB,
-    ROXO            = 0x800080,
-    MARROM          = 0x8B4513,
-    VERDE_CLARO     = 0x00FF7F,
-    AZUL_CLARO      = 0xADD8E6,
-    AZUL_ESCURO     = 0x00008B,
-    VERDE_ESCURO    = 0x006400,
-    VERMELHO_ESCURO = 0x8B0000,
-    CINZA_ESCURO    = 0x494949,
-    CINZA_CLARO     = 0xD3D3D3,
-    LARANJA_ESCURO  = 0xCB2701,
-    LARANJA_CLARO   = 0xF0A150,
-    ROSA_ESCURO     = 0xFF1493,
-    ROSA_CLARO      = 0xFFC0CB,
-    ROXO_ESCURO     = 0x9400D3,
-    PURPURA         = 0x9370DB,
-    VINHO           = 0x800000,
-    MARROM_ESCURO   = 0x452209,
-    MARROM_CLARO    = 0x854112,
+    VERMELHO        = 0xFF0000, ///< @color{#FF0000}
+    VERDE           = 0x00FF00, ///< @color{#00FF00}
+    AZUL            = 0x0000FF, ///< @color{#0000FF}
+    AMARELO         = 0xFFFF00, ///< @color{#FFFF00}
+    MANGETA         = 0xFF00FF, ///< @color{#FF00FF}
+    CIANO           = 0x00FFFF, ///< @color{#00FFFF}
+    BRANCO          = 0xFFFFFF, ///< @color{#FFFFFF}
+    PRETO           = 0x000000, ///< @color{#000000}
+    CINZA           = 0x808080, ///< @color{#808080}
+    LARANJA         = 0xFFA500, ///< @color{#FFA500}
+    ROSA            = 0xFFC0CB, ///< @color{#FFC0CB}
+    ROXO            = 0x800080, ///< @color{#800080}
+    MARROM          = 0x8B4513, ///< @color{#8B4513}
+    VERDE_CLARO     = 0x00FF7F, ///< @color{#00FF7F}
+    AZUL_CLARO      = 0xADD8E6, ///< @color{#ADD8E6}
+    AZUL_ESCURO     = 0x00008B, ///< @color{#00008B}
+    VERDE_ESCURO    = 0x006400, ///< @color{#006400}
+    VERMELHO_ESCURO = 0x8B0000, ///< @color{#8B0000}
+    CINZA_ESCURO    = 0x494949, ///< @color{#494949}
+    CINZA_CLARO     = 0xD3D3D3, ///< @color{#D3D3D3}
+    LARANJA_ESCURO  = 0xCB2701, ///< @color{#CB2701}
+    LARANJA_CLARO   = 0xF0A150, ///< @color{#F0A150}
+    ROSA_ESCURO     = 0xFF1493, ///< @color{#FF1493}
+    ROSA_CLARO      = 0xFFC0CB, ///< @color{#FFC0CB}
+    ROXO_ESCURO     = 0x9400D3, ///< @color{#9400D3}
+    PURPURA         = 0x9370DB, ///< @color{#9370DB}
+    VINHO           = 0x800000, ///< @color{#800000}
+    MARROM_ESCURO   = 0x452209, ///< @color{#452209}
+    MARROM_CLARO    = 0x854112, ///< @color{#854112}
 };
 
 /*!
