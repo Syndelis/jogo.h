@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['backspace_117',['BACKSPACE',['../input_8h.html#a79d014352949143f5f4f4e714517ee61ad2534cebcf6f430484b7c931dd657ddc',1,'input.h']]],
-  ['baixo_118',['BAIXO',['../input_8h.html#a79d014352949143f5f4f4e714517ee61a98efb129c9b6d594d7185148bf011633',1,'input.h']]],
-  ['botao_5fdireito_119',['BOTAO_DIREITO',['../input_8h.html#a688a3217fab4610eb4866d88ac7854a0ab8701b7034ad7dd2528a49d3d0890ad0',1,'input.h']]],
-  ['botao_5fesquerdo_120',['BOTAO_ESQUERDO',['../input_8h.html#a688a3217fab4610eb4866d88ac7854a0a77bcdb8732dd4d943ea0b3dbc13e3dd1',1,'input.h']]],
-  ['botao_5fmeio_121',['BOTAO_MEIO',['../input_8h.html#a688a3217fab4610eb4866d88ac7854a0af3de843eef7f3c8bc60d0dbf9de507bd',1,'input.h']]]
+  ['amarelo_146',['AMARELO',['../display_8h.html#af3dd3e00e094f0b1eadb849360426b5da968fd04270855d4f614b4650f33e5f9f',1,'display.h']]],
+  ['azul_147',['AZUL',['../display_8h.html#af3dd3e00e094f0b1eadb849360426b5dac2145f36e4c2293e155b3e8cd317a955',1,'display.h']]],
+  ['azul_5fclaro_148',['AZUL_CLARO',['../display_8h.html#af3dd3e00e094f0b1eadb849360426b5dab23d465688f18ce2ad8a119a07ff0c45',1,'display.h']]],
+  ['azul_5fescuro_149',['AZUL_ESCURO',['../display_8h.html#af3dd3e00e094f0b1eadb849360426b5dad61eba23106327ce187d4830d593c4b9',1,'display.h']]]
 ];
