@@ -133,7 +133,7 @@ $(document).ready(function(){initNavTree('display_8h.html',''); initResizable();
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a8389bb9dd31a2931bcbad45e441a9127"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="display_8h.html#a8389bb9dd31a2931bcbad45e441a9127">cor</a>(...)&#160;&#160;&#160;_cor(NARGS(__VA_ARGS__), __VA_ARGS__)</td></tr>
+<tr class="memitem:a8389bb9dd31a2931bcbad45e441a9127"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="display_8h.html#a8389bb9dd31a2931bcbad45e441a9127">cor</a>(...)</td></tr>
 <tr class="memdesc:a8389bb9dd31a2931bcbad45e441a9127"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a cor para os próximos desenhos de figuras geométricas, textos e imagens.  <a href="display_8h.html#a8389bb9dd31a2931bcbad45e441a9127">Mais...</a><br /></td></tr>
 <tr class="separator:a8389bb9dd31a2931bcbad45e441a9127"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -227,11 +227,19 @@ Funções</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>...</em></td><td>)</td>
-          <td>&#160;&#160;&#160;_cor(NARGS(__VA_ARGS__), __VA_ARGS__)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<b>Valor:</b><div class="fragment"><div class="line">    _Generic( \</div>
+<div class="line">            &amp;(<span class="keywordtype">int</span>[]){__VA_ARGS__}, \</div>
+<div class="line">            int(*)[1]: _cor_1, \</div>
+<div class="line">            int(*)[2]: _cor_2, \</div>
+<div class="line">            int(*)[3]: _cor_3, \</div>
+<div class="line">            int(*)[4]: _cor_4, \</div>
+<div class="line">            default: _cor_gt_4 \</div>
+<div class="line">        )(__VA_ARGS__)</div>
+</div><!-- fragment -->
 <p>Define a cor para os próximos desenhos de figuras geométricas, textos e imagens. </p>
 <p>Essa função pode operar de duas maneiras:</p><ul>
 <li>Passando 1 parâmetro: esse parâmetro deve ser uma das constantes definidas em <a class="el" href="display_8h.html#af3dd3e00e094f0b1eadb849360426b5d">Cores</a>;</li>
