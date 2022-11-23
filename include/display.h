@@ -79,7 +79,17 @@ typedef int ponto[2];
  * @param azul                   Valor de azul (0-255). @b Opcional
  * @param alfa                   Valor de transparência (0-255). @b Opcional
  */
-#define cor(...) _cor(NARGS(__VA_ARGS__), __VA_ARGS__)
+
+#define cor(...) \
+    _Generic( \
+            &(int[]){__VA_ARGS__}, \
+            int(*)[1]: _cor_1, \
+            int(*)[2]: _cor_2, \
+            int(*)[3]: _cor_3, \
+            int(*)[4]: _cor_4, \
+            default: _cor_gt_4 \
+        )(__VA_ARGS__)
+
 /*!
  * @example cor
  * @code
@@ -169,7 +179,15 @@ void reseta_zoom();
 
 // If removed, triggers a "-Wimplicit-function-declaration", but works
 // nonetheless
-void _cor(int n, ...);
+
+void _cor_1(int rgb_hex);
+void _cor_3(int r, int g, int b);
+void _cor_4(int r, int g, int b, int a);
+
+
+__attribute__((error("\033[1;41mERRO! Função `cor` chamada com \033[1;4;43m2\033[1;24;41m parâmetros!\033[m"))) void _cor_2(int _x, ...);
+__attribute__((error("\033[1;41mERRO! Função `cor` chamada com \033[1;4;43mmais de 4\033[1;24;41m parâmetros!\033[m"))) void _cor_gt_4(int _x, ...);
+
 void _update_drawing_system();
 
 #endif
