@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>jogo.h: jogo.h - Biblioteca de alto nível para desenvolvimento de jogos em C</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -51,7 +51,7 @@
    <!--BEGIN FULL_SIDEBAR-->
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
+          <img id="MSearchSelect" src="search/mag_sel.svg"
                onmouseover="return searchBox.OnSearchSelectShow()"
                onmouseout="return searchBox.OnSearchSelectHide()"
                alt=""/>
@@ -60,7 +60,7 @@
                onblur="searchBox.OnSearchFieldFocus(false)" 
                onkeyup="searchBox.OnSearchFieldChange(event)"/>
           </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
           </span>
         </div>
 </td></tr>
@@ -69,10 +69,10 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Gerado por Doxygen 1.8.17 -->
+<!-- Gerado por Doxygen 1.9.1 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar','.html');
 /* @license-end */
 </script>
 <script type="text/javascript" src="menudata.js"></script>
@@ -121,7 +121,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="title"><a class="el" href="jogo_8h.html">jogo.h</a> - Biblioteca de alto nível para desenvolvimento de jogos em C </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p align="left"></p>
+<div class="textblock"><p align="left"><a class="anchor" id="md_README"></a> </p>
 <p><a href="https://syndelis.github.io/jogo.h" alt="Documentação"><img src="https://img.shields.io/static/v1?label=Docs&amp;message=GitHub Pages&amp;color=blue&amp;style=for-the-badge&amp;logo=gitbook" alt="" class="inline"/> </a> </p>
 <ul>
 <li><a href="#sobre-a-biblioteca-">Sobre a biblioteca</a></li>
@@ -136,7 +136,8 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </ul>
 <hr  />
 <h1><a class="anchor" id="autotoc_md2"></a>
-Sobre a biblioteca &lt;a href="#jogoh---biblioteca-de-alto-nível-para-desenvolvimento-de-jogos-em-c"&gt;▲&lt;/a&gt;</h1>
+Sobre a biblioteca &lt;a href="#jogoh---biblioteca-de-alto-nível-para-desenvolvimento-de-jogos-em-c"</h1>
+<p>&gt;▲</p>
 <p>A biblioteca **<code><a class="el" href="jogo_8h.html">jogo.h</a></code>** oferece uma API de alto nível para o gerenciamento de janelas, renderização de figuras geométricas e texturas (imagens e GIFs), reprodutor de áudio (todos os formatos mais comuns, como MP3, OGG e WAV) e sistema de interação com o usuário.</p>
 <p>O objetivo da biblioteca é abstrair todas as tecnologias de baixo nível, apresentando ao programador uma interface que é direta ao ponto. Exemplo de funções da sua API são:</p>
 <ul>
@@ -148,7 +149,8 @@ Sobre a biblioteca &lt;a href="#jogoh---biblioteca-de-alto-nível-para-desenvolv
 </ul>
 <hr  />
 <h1><a class="anchor" id="autotoc_md4"></a>
-Como usar &lt;a href="#jogoh---biblioteca-de-alto-nível-para-desenvolvimento-de-jogos-em-c"&gt;▲&lt;/a&gt;</h1>
+Como usar &lt;a href="#jogoh---biblioteca-de-alto-nível-para-desenvolvimento-de-jogos-em-c"</h1>
+<p>&gt;▲</p>
 <p>Este projeto possui pouquíssimas <a href="#dependências-e-compilação">dependências externas</a> e compila para uma biblioteca estática **<code>libjogo.a</code>**. Para compilar qualquer programa que use a bibliteca, basta incluí-la nas fontes do GCC/Clang e adicionar os includes e links gerados pelo makefile.</p>
 <p>Exemplo de programa e compilação:</p>
 <div class="fragment"><div class="line"><span class="comment">// main.c</span></div>
@@ -163,6 +165,13 @@ Como usar &lt;a href="#jogoh---biblioteca-de-alto-nível-para-desenvolvimento-de
 <div class="line"> </div>
 <div class="line">    <a class="code" href="jogo_8h.html#a10716776b8cc9ed7714e40c338656fd0">fecha_janela</a>();</div>
 <div class="line">}</div>
+<div class="ttc" id="ainput_8h_html_a79d014352949143f5f4f4e714517ee61af5297152557c7da396243000ca240e89"><div class="ttname"><a href="input_8h.html#a79d014352949143f5f4f4e714517ee61af5297152557c7da396243000ca240e89">ESC</a></div><div class="ttdeci">@ ESC</div><div class="ttdoc">Tecla Esc.</div><div class="ttdef"><b>Definition:</b> input.h:39</div></div>
+<div class="ttc" id="ainput_8h_html_af74c11fa3552eaaec9dac8c70bb03d13"><div class="ttname"><a href="input_8h.html#af74c11fa3552eaaec9dac8c70bb03d13">tecla_pressionada</a></div><div class="ttdeci">bool tecla_pressionada(int tecla)</div><div class="ttdoc">Verifica se a tecla está apertada.</div></div>
+<div class="ttc" id="ajogo_8h_html"><div class="ttname"><a href="jogo_8h.html">jogo.h</a></div></div>
+<div class="ttc" id="ajogo_8h_html_a10716776b8cc9ed7714e40c338656fd0"><div class="ttname"><a href="jogo_8h.html#a10716776b8cc9ed7714e40c338656fd0">fecha_janela</a></div><div class="ttdeci">void fecha_janela()</div><div class="ttdoc">Fecha a janela e termina o jogo.</div></div>
+<div class="ttc" id="ajogo_8h_html_a9b6ad8577fea2fbf42b527f4622325e7"><div class="ttname"><a href="jogo_8h.html#a9b6ad8577fea2fbf42b527f4622325e7">janela_deve_fechar</a></div><div class="ttdeci">void janela_deve_fechar()</div><div class="ttdoc">Marca a janela para fechar. Isso significa que janela_esta_aberta() retornará false na próxima vez qu...</div></div>
+<div class="ttc" id="ajogo_8h_html_ac602aadd42fc32970c8f48f8104e7472"><div class="ttname"><a href="jogo_8h.html#ac602aadd42fc32970c8f48f8104e7472">abre_janela</a></div><div class="ttdeci">#define abre_janela(...)</div><div class="ttdoc">Abre a janela do jogo.</div><div class="ttdef"><b>Definition:</b> jogo.h:48</div></div>
+<div class="ttc" id="ajogo_8h_html_ad6a89839c8fb337b8cc794a0442c795c"><div class="ttname"><a href="jogo_8h.html#ad6a89839c8fb337b8cc794a0442c795c">janela_esta_aberta</a></div><div class="ttdeci">bool janela_esta_aberta()</div><div class="ttdoc">Verifica se a janela do jogo está aberta.</div></div>
 </div><!-- fragment --><p>O programa acima simplesmente abre uma janela e a fecha caso o usuário tecle <b>Esc</b>. Para compilá-lo, iremos supor que a biblioteca **<code><a class="el" href="jogo_8h.html">jogo.h</a></code>** está no diretório **<code>lib/jogo/</code>**</p>
 <div class="fragment"><div class="line">$ make -C lib/jogo</div>
 <div class="line"> </div>
@@ -174,7 +183,8 @@ Como usar &lt;a href="#jogoh---biblioteca-de-alto-nível-para-desenvolvimento-de
 </ul>
 <hr  />
 <h1><a class="anchor" id="autotoc_md6"></a>
-Instalando as Dependências &lt;a href="#jogoh---biblioteca-de-alto-nível-para-desenvolvimento-de-jogos-em-c"&gt;▲&lt;/a&gt;</h1>
+Instalando as Dependências &lt;a href="#jogoh---biblioteca-de-alto-nível-para-desenvolvimento-de-jogos-em-c"</h1>
+<p>&gt;▲</p>
 <p>A biblioteca possui dependência dos seguintes pacotes:</p><ul>
 <li>Algum compilador de C (gcc, clang);</li>
 <li>Comando utilitário <code>make</code>;</li>
@@ -228,7 +238,8 @@ Windows</h2>
 </div><!-- fragment --><p>E a biblioteca estará compilada. Para apagar os arquivos compilados, rode:</p>
 <div class="fragment"><div class="line">PS&gt; .\utils\windows-clean.ps1</div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md10"></a>
-Documentação &lt;a href="#jogoh---biblioteca-de-alto-nível-para-desenvolvimento-de-jogos-em-c"&gt;▲&lt;/a&gt;</h1>
+Documentação &lt;a href="#jogoh---biblioteca-de-alto-nível-para-desenvolvimento-de-jogos-em-c"</h1>
+<p>&gt;▲</p>
 <p>A documentação está disponível neste link: <b>[docs]</b>.</p>
 <p>Ela foi feita usando <a href="https://doxygen.nl">Doxygen</a> com o tema <a href="https://jothepro.github.io/doxygen-awesome-css/index.html">Doxygen Awesome CSS</a>. Para <em>buildar</em> a documentação, instale <code>doxygen</code> e execute</p>
 <div class="fragment"><div class="line">$ make docs</div>
@@ -236,19 +247,10 @@ Documentação &lt;a href="#jogoh---biblioteca-de-alto-nível-para-desenvolvimen
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="ainput_8h_html_a79d014352949143f5f4f4e714517ee61af5297152557c7da396243000ca240e89"><div class="ttname"><a href="input_8h.html#a79d014352949143f5f4f4e714517ee61af5297152557c7da396243000ca240e89">ESC</a></div><div class="ttdeci">@ ESC</div><div class="ttdoc">Tecla Esc.</div><div class="ttdef"><b>Definition:</b> input.h:39</div></div>
-<div class="ttc" id="ajogo_8h_html"><div class="ttname"><a href="jogo_8h.html">jogo.h</a></div></div>
-<div class="ttc" id="ajogo_8h_html_a9b6ad8577fea2fbf42b527f4622325e7"><div class="ttname"><a href="jogo_8h.html#a9b6ad8577fea2fbf42b527f4622325e7">janela_deve_fechar</a></div><div class="ttdeci">void janela_deve_fechar()</div><div class="ttdoc">Marca a janela para fechar. Isso significa que janela_esta_aberta() retornará false na próxima vez qu...</div></div>
-<div class="ttc" id="ajogo_8h_html_a10716776b8cc9ed7714e40c338656fd0"><div class="ttname"><a href="jogo_8h.html#a10716776b8cc9ed7714e40c338656fd0">fecha_janela</a></div><div class="ttdeci">void fecha_janela()</div><div class="ttdoc">Fecha a janela e termina o jogo.</div></div>
-<div class="ttc" id="ajogo_8h_html_ad6a89839c8fb337b8cc794a0442c795c"><div class="ttname"><a href="jogo_8h.html#ad6a89839c8fb337b8cc794a0442c795c">janela_esta_aberta</a></div><div class="ttdeci">bool janela_esta_aberta()</div><div class="ttdoc">Verifica se a janela do jogo está aberta.</div></div>
-<div class="ttc" id="ajogo_8h_html_ac602aadd42fc32970c8f48f8104e7472"><div class="ttname"><a href="jogo_8h.html#ac602aadd42fc32970c8f48f8104e7472">abre_janela</a></div><div class="ttdeci">#define abre_janela(...)</div><div class="ttdoc">Abre a janela do jogo.</div><div class="ttdef"><b>Definition:</b> jogo.h:48</div></div>
-<div class="ttc" id="ainput_8h_html_af74c11fa3552eaaec9dac8c70bb03d13"><div class="ttname"><a href="input_8h.html#af74c11fa3552eaaec9dac8c70bb03d13">tecla_pressionada</a></div><div class="ttdeci">bool tecla_pressionada(int tecla)</div><div class="ttdoc">Verifica se a tecla está apertada.</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Gerado por
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

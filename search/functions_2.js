@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['fecha_5fjanela_120',['fecha_janela',['../jogo_8h.html#a10716776b8cc9ed7714e40c338656fd0',1,'jogo.h']]],
-  ['fonte_121',['fonte',['../image_8h.html#a6ae199bb4f7d7dc5c0ae4f7752c33dca',1,'image.h']]]
+  ['espessura_123',['espessura',['../display_8h.html#ab2e10b72cc796a31ca8ee93c0fbb345d',1,'display.h']]]
 ];

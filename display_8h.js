@@ -34,8 +34,10 @@ var display_8h =
       [ "MARROM_CLARO", "display_8h.html#af3dd3e00e094f0b1eadb849360426b5da778a0e524a04ea6850042e68b7b757bc", null ]
     ] ],
     [ "desenha_circulo", "display_8h.html#abab6d93a27cbcdb99fb31b3cceb1651b", null ],
+    [ "desenha_linha", "display_8h.html#a0fe8d917140aa6f2a28db18f7e709418", null ],
     [ "desenha_poligono", "display_8h.html#a74c66947ed2bc6422b41c4215c4714b5", null ],
     [ "desenha_retangulo", "display_8h.html#a14d933f581bc34cc5b78e3fb86c36bdd", null ],
+    [ "espessura", "display_8h.html#ab2e10b72cc796a31ca8ee93c0fbb345d", null ],
     [ "preenchimento", "display_8h.html#ac224d83d0e3e0c49e9af596b43c18844", null ],
     [ "reseta_rotacao", "display_8h.html#a2b4c31f8db6e550745b7770627ab99e3", null ],
     [ "reseta_zoom", "display_8h.html#a538d2d61d2f76bb202ebb63d0a216591", null ],

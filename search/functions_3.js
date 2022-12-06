@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['janela_5fdeve_5ffechar_122',['janela_deve_fechar',['../jogo_8h.html#a9b6ad8577fea2fbf42b527f4622325e7',1,'jogo.h']]],
-  ['janela_5festa_5faberta_123',['janela_esta_aberta',['../jogo_8h.html#ad6a89839c8fb337b8cc794a0442c795c',1,'jogo.h']]]
+  ['fecha_5fjanela_124',['fecha_janela',['../jogo_8h.html#a10716776b8cc9ed7714e40c338656fd0',1,'jogo.h']]],
+  ['fonte_125',['fonte',['../image_8h.html#a6ae199bb4f7d7dc5c0ae4f7752c33dca',1,'image.h']]]
 ];
