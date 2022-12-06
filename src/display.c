@@ -64,6 +64,22 @@ void preenchimento(bool ativo) {
 
 // -----------------------------------------------------------------------------
 
+void espessura(float espessura) {
+    glPointSize(espessura);
+    glLineWidth(espessura);
+}
+
+// -----------------------------------------------------------------------------
+
+DISPLAY_FUNC(desenha_linha, int x2, int y2) {
+    glBegin(GL_LINES);
+        glVertex2i(x , y );
+        glVertex2i(x2, y2);
+    glEnd();
+}
+
+// -----------------------------------------------------------------------------
+
 DISPLAY_FUNC(desenha_retangulo, int largura, int altura) {
     glBegin(_glmode);
         glVertex2f(x, y);

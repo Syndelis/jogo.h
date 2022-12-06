@@ -128,12 +128,28 @@ DISPLAY_FUNC(desenha_retangulo, int largura, int altura);
 DISPLAY_FUNC(desenha_circulo, int raio);
 
 /*!
+ * @brief Desenha uma linha.
+ * @param x,y     Posição inicial da linha.
+ * @param x2,y2   Posição final da linha.
+ * @returns @c void
+ */
+DISPLAY_FUNC(desenha_linha, int x2, int y2);
+
+/*!
  * @brief Determina se as próximas figuras devem ser preenchidas ou somente deve
             ser desenhado o contorno.
  * @param ativo     @c true para preenchimento, @c false para contorno.
  * @returns @c void
  */
 void preenchimento(bool ativo);
+
+/*!
+ * @brief Define a espessura da linha usada para desenhar todas as formas
+ *         geométricas.
+ * @param espessura     Espessura da linha. @c 1.0 é o valor padrão.
+ * @returns @c void
+ */
+void espessura(float espessura);
 
 /*!
  * @brief Desenha um polígono arbitrário.

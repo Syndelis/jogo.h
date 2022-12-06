@@ -187,6 +187,8 @@ bool janela_esta_aberta() {
 
         glClear(GL_COLOR_BUFFER_BIT);
         glColor4f(1, 1, 1, 1);
+        glPointSize(1.f);
+        glLineWidth(1.f);
     }
 
     return is_open;
