@@ -160,7 +160,7 @@ void _play_sound(char *filename, bool loop) {
         else {
             ma_sound_stop(&last->_sound);
             _rewind_sound(last);
-            _loop_sound(&new_entry->_sound, loop);
+            _loop_sound(&last->_sound, loop);
             ma_sound_start(&last->_sound);
         }
 
